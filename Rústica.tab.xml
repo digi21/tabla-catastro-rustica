@@ -346,6 +346,477 @@ zoome
 		</style>
 	</styles>
 <databaseSchema>
+<table name="ALTIPUN" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ATRIBUTO" title="ATRIBUTO" type="C" length="16" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COTA" title="COTA" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="AMBITO" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AA_PONEN" title="AA_PONEN" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="BLOQUEO" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="BLOQUE" title="BLOQUE" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMERO" title="NUMERO" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USUARIO" title="USUARIO" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NOTAS" title="NOTAS" type="C" length="100" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="Carvia" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VIA" title="VIA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DENOMINA" title="DENOMINA" type="C" length="25" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="CONSTRU" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MASA" title="MASA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PARCELA" title="PARCELA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HOJA" title="HOJA" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONSTRU" title="CONSTRU" type="C" length="25" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUM_EXP" title="NUM_EXP" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="DETECAR" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CODIGO" title="CODIGO" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OBSERV" title="OBSERV" type="C" length="255" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USUARIO" title="USUARIO" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USUBAJA" title="USUBAJA" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MOTIALTA" title="MOTIALTA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MOTIBAJA" title="MOTIBAJA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CODBAJA" title="CODBAJA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PRIORIDAD" title="PRIORIDAD" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMERO" title="NUMERO" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="SUPERF" title="SUPERF" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ESTADO" title="ESTADO" type="C" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="SUBESTADO" title="SUBESTADO" type="C" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="DETEMALLA" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VISITADO" title="VISITADO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OBSERV" title="OBSERV" type="C" length="50" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NOMBRE" title="NOMBRE" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="DISTRITO" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DISTRITO" title="DISTRITO" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MODIFICA" title="MODIFICA" type="C" length="25" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="EJES" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VIA" title="VIA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ELEMLIN" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VIA" title="VIA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ELEMPUN" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ATRIBUTO" title="ATRIBUTO" type="C" length="16" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ELEMTEX" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ROTULO" title="ROTULO" type="C" length="32" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VIA" title="VIA" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ERRLIN" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="GEORREF_RECINTOS" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ID_RECINT" title="ID_RECINT" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO_TR" title="TIPO_TR" type="C" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="INCIDEN" title="INCIDEN" type="C" length="15" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OBSERV" title="OBSERV" type="C" length="254" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUM_VECTO" title="NUM_VECTO" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ERR_TOPOL" title="ERR_TOPOL" type="N" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HAX" title="HAX" type="N" length="15" bgColor="#ffffff" decimalCount="9" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HBX" title="HBX" type="N" length="15" bgColor="#ffffff" decimalCount="9" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HCX" title="HCX" type="N" length="15" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HAY" title="HAY" type="N" length="15" bgColor="#ffffff" decimalCount="9" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HBY" title="HBY" type="N" length="15" bgColor="#ffffff" decimalCount="9" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HCY" title="HCY" type="N" length="15" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DESPLAZ_X" title="DESPLAZ_X" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DESPLAZ_Y" title="DESPLAZ_Y" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="GIRO_X" title="GIRO_X" type="N" length="11" bgColor="#ffffff" decimalCount="7" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="GIRO_Y" title="GIRO_Y" type="N" length="11" bgColor="#ffffff" decimalCount="7" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ESCALA_X" title="ESCALA_X" type="N" length="9" bgColor="#ffffff" decimalCount="6" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ESCALA_Y" title="ESCALA_Y" type="N" length="9" bgColor="#ffffff" decimalCount="6" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="RMS_TRANS" title="RMS_TRANS" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="RMS_ORIG" title="RMS_ORIG" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="GEORREF_VECTORES" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ID_VECTOR" title="ID_VECTOR" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ID_RECINT" title="ID_RECINT" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="X_ORIG" title="X_ORIG" type="N" length="15" bgColor="#ffffff" decimalCount="4" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="Y_ORIG" title="Y_ORIG" type="N" length="15" bgColor="#ffffff" decimalCount="4" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="X_DEST" title="X_DEST" type="N" length="13" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="Y_DEST" title="Y_DEST" type="N" length="13" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="Z_DEST" title="Z_DEST" type="N" length="7" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PTO_INI" title="PTO_INI" type="C" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="LONGITUD" title="LONGITUD" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ORIENTA" title="ORIENTA" type="N" length="11" bgColor="#ffffff" decimalCount="7" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ESTADO" title="ESTADO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FUENT_REF" title="FUENT_REF" type="C" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHA_FUE" title="FECHA_FUE" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OBSERV" title="OBSERV" type="C" length="254" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DX" title="DX" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DY" title="DY" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="RESIDUO" title="RESIDUO" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="GRADO_DESARROLLO" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CODIGO" title="CODIGO" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DENOMINA" title="DENOMINA" type="C" length="30" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CALIFICA" title="CALIFICA" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ACTUACION" title="ACTUACION" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PLAN" title="PLAN" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="REALIZADO" title="REALIZADO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FIGURA" title="FIGURA" type="C" length="20" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="APROBACI" title="APROBACI" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHA" title="FECHA" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USO" title="USO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EDIFICAB" title="EDIFICAB" type="N" length="7" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="V_UNITAR" title="V_UNITAR" type="N" length="9" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="V_REPERC" title="V_REPERC" type="N" length="9" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ZONIFICA" title="ZONIFICA" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OCUPACI" title="OCUPACI" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OBSERVA" title="OBSERVA" type="C" length="50" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="BOLETIN" title="BOLETIN" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NBOLETIN" title="NBOLETIN" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NPARCELAS" title="NPARCELAS" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="HOJAS" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HOJA" title="HOJA" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="LIMITES" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="MAPA" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PROYE" title="PROYE" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DESCRIP" title="DESCRIP" type="C" length="100" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HAX" title="HAX" type="N" length="14" bgColor="#ffffff" decimalCount="10" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HBX" title="HBX" type="N" length="14" bgColor="#ffffff" decimalCount="10" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HCX" title="HCX" type="N" length="12" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HAY" title="HAY" type="N" length="14" bgColor="#ffffff" decimalCount="10" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HBY" title="HBY" type="N" length="14" bgColor="#ffffff" decimalCount="10" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HCY" title="HCY" type="N" length="12" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPOMALLA" title="TIPOMALLA" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ESTADO" title="ESTADO" type="N" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAPUB" title="FECHAPUB" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COMENTA" title="COMENTA" type="C" length="80" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PRECISION" title="PRECISION" type="N" length="4" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DESC_PREC" title="DESC_PREC" type="C" length="30" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="MASA" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MASA" title="MASA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HOJA" title="HOJA" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUM_EXP" title="NUM_EXP" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="MUESTRAS" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUESTRA" title="MUESTRA" type="C" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="PARCELA" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MASA" title="MASA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HOJA" title="HOJA" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PARCELA" title="PARCELA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VIA" title="VIA" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMERO" title="NUMERO" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMERODUP" title="NUMERODUP" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUM_EXP" title="NUM_EXP" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="POLIGONO" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="POLIGONO" title="POLIGONO" type="C" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="SIM_BLOQUEO" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USUARIO" title="USUARIO" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TABLA" title="TABLA" type="C" length="30" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NOTAS" title="NOTAS" type="C" length="40" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMERO" title="NUMERO" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="SUBPARCE" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MASA" title="MASA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="HOJA" title="HOJA" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PARCELA" title="PARCELA" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="SUBPARCE" title="SUBPARCE" type="C" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="9" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NUM_EXP" title="NUM_EXP" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ALTITUD" title="ALTITUD" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PENDIENTE" title="PENDIENTE" type="N" length="6" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="SUNAU_N" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DENOMINA" title="DENOMINA" type="C" length="16" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="URBANIS" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="URBANIS" title="URBANIS" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ZONVALOR_CCON" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ZONVALOR" title="ZONVALOR" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ZONVALOR_OCMI" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ZONVALOR" title="ZONVALOR" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CODZONA" title="CODZONA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNZONA" title="MUNZONA" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CODUSO" title="CODUSO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NINMUEBLE" title="NINMUEBLE" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USOEX" title="USOEX" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPOLOGIA" title="TIPOLOGIA" type="C" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CATEGORIA" title="CATEGORIA" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ANTIGUEDA" title="ANTIGUEDA" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AACONSTR" title="AACONSTR" type="N" length="4" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="SUPERF" title="SUPERF" type="N" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="SANEXOS" title="SANEXOS" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="UA" title="UA" type="N" length="4" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NU" title="NU" type="N" length="4" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="VINICIAL" title="VINICIAL" type="N" length="7" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="EDIFBRUTA" title="EDIFBRUTA" type="N" length="5" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="USOPREDO" title="USOPREDO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCEQUIP" title="PORCEQUIP" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCZV" title="PORCZV" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="RSUPLETOR" title="RSUPLETOR" type="C" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCC" title="PORCC" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCO" title="PORCO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCI" title="PORCI" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCT" title="PORCT" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PORCG" title="PORCG" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NGARAJES" title="NGARAJES" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MODIFICA" title="MODIFICA" type="C" length="25" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="BLOQUEADO" title="BLOQUEADO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="NINMV" title="NINMV" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
+<table name="ZONVALOR_PON" description="">
+	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="ZONVALOR" title="ZONVALOR" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
 </databaseSchema>
 	<modeloSemantico:semanticModel>
 	</modeloSemantico:semanticModel>
