@@ -1277,7 +1277,7 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#e3ea70" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e3ea70" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="060104" description="Eje de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+		<code name="060104" description="Eje de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=060104" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
 			<representation style="" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060104"/>
@@ -1297,7 +1297,7 @@ zoome
 				<ioGeomedia:transform table="060104" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="060104" textHeight="1.000000" />
-				<ioshp:transform nameSHP="060104" schema="060104" typeNewTable="5" />
+				<ioshp:transform nameSHP="EJES" schema="EJES" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#03da3a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3da3a" point-size="1.000000" />
 			</io>
 		</code>
@@ -1325,7 +1325,7 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#530ba6" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#53ba6" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="060204" description="Eje de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+		<code name="060204" description="Eje de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=060204" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
 			<representation style="" color="42" color-stereo="42" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060204"/>
@@ -1345,7 +1345,7 @@ zoome
 				<ioGeomedia:transform table="060204" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="060204" textHeight="1.000000" />
-				<ioshp:transform nameSHP="060204" schema="060204" typeNewTable="5" />
+				<ioshp:transform nameSHP="EJES" schema="EJES" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#1c8a13" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#1c8a13" point-size="1.000000" />
 			</io>
 		</code>
@@ -1373,7 +1373,7 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#c98a79" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#c98a79" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="060404" description="Eje de camino, vía pecuaria" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+		<code name="060404" description="Eje de camino, vía pecuaria" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=060404" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
 			<representation style="" color="42" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060109"/>
@@ -1393,7 +1393,7 @@ zoome
 				<ioGeomedia:transform table="060109" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="060109" textHeight="1.000000" />
-				<ioshp:transform nameSHP="060109" schema="060109" typeNewTable="5" />
+				<ioshp:transform nameSHP="EJES" schema="EJES" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#20783e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#20783e" point-size="1.000000" />
 			</io>
 		</code>
@@ -1565,7 +1565,7 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#4b5c68" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4b5c68" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="111101" description="Límite suelo naturaleza urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=111101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+		<code name="111101" description="Límite suelo narutaleza urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=111101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
 			<representation style="" color="2" color-stereo="2" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="111101"/>
@@ -2453,7 +2453,7 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#7ab6b2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#7ab6b2" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="161101" description="Eje de red viaria" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+		<code name="161101" description="Eje de red viaria" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=161101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
 			<representation style="" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="161101"/>
@@ -2473,7 +2473,7 @@ zoome
 				<ioGeomedia:transform table="161101" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="161101" textHeight="1.000000" />
-				<ioshp:transform nameSHP="161101" schema="161101" typeNewTable="5" />
+				<ioshp:transform nameSHP="EJES" schema="EJES" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#73a7b7" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#73a7b7" point-size="1.000000" />
 			</io>
 		</code>
