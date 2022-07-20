@@ -1,0 +1,2898 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xml" href="#style1"?>
+<!DOCTYPE digittab [
+	<!ATTLIST xsl:stylesheet
+		id ID #REQUIRED>
+]>
+<digitab xmlns:odt="http://schemas.digi21.net/DigiNG/DigiTab/StyleOldDigiTab/v1.0" xmlns:ccc="http://schemas.digi21.net/DigiNG/Desencadenadores/v1.0" xmlns:modeloSemantico="http://schemas.digi21.net/DigiNG/ModeloSemantico/v1.0" xmlns:iobin="http://schemas.digi21.net/DigiNG/IO/bin/v1.0" xmlns:iobind="http://schemas.digi21.net/DigiNG/IO/bind/v1.0" xmlns:iocsv="http://schemas.digi21.net/DigiNG/IO/csv/v1.0" xmlns:iodgn="http://schemas.digi21.net/DigiNG/IO/dgnv8/v1.0" xmlns:iodwg="http://schemas.digi21.net/DigiNG/IO/dwg/v1.0" xmlns:ioGeomedia="http://schemas.digi21.net/DigiNG/IO/Geomedia/v1.0" xmlns:iokml="http://schemas.digi21.net/DigiNG/IO/kml/v1.0" xmlns:ioblend="http://schemas.digi21.net/DigiNG/IO/Pdf/v1.0" xmlns:ioPostGis="http://schemas.digi21.net/DigiNG/IO/PostGis/v1.0" xmlns:ioshp="http://schemas.digi21.net/DigiNG/IO/ShapeFile/v1.0" xmlns:iosvg="http://schemas.digi21.net/DigiNG/IO/Svg/v1.0"  bgColor="255 255 255" colorUnknown="43 2 0" colorSnap="1 0 0">
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                id="style1">
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title>Archivo de tabla de códigos</title>
+        <style type="text/css">
+          tr:nth-child(even) { background: #cccccc; }
+          body { font-family:Verdana; font-size:small}
+        </style>
+      </head>
+      <body>
+        <h3>Archivo de tabla de códigos</h3>
+        <p>Este archivo define códigos, así como su representación y transformación a distintos formatos de archivo de dibujo.</p>
+
+        <table>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+          </tr>
+
+          <xsl:for-each select="/digitab/codes/code">
+            <tr>
+              <td>
+                <xsl:value-of select="@name"/>
+              </td>
+              <td>
+                <xsl:value-of select="@description"/>
+              </td>
+            </tr>
+          </xsl:for-each>
+        </table>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
+			<pythonEnvironment><![CDATA[def Atr(clave, valor):
+    global g
+    for codigo in g.Codes:
+        if clave in codigo.Attributes:
+            if codigo.Attributes[clave] == valor:
+                return True
+    return False
+
+def EvaluaGeometria(geometria, expresion):
+    global g
+    g = geometria
+    locales = {'g' : geometria}
+
+    try:
+        return eval(expresion, None, locales)
+    except:
+        return False
+
+def LocalizaGeometrias(geometrias, expresion):
+    return (x for x in geometrias if not x.Deleted and EvaluaGeometria(x, expresion))
+]]></pythonEnvironment>
+			<referenceAssemblies><![CDATA[]]>			</referenceAssemblies>
+			<commandsWhenSelectingCode><![CDATA[
+C=0
+S=0
+IR_PRINCIPIO=0
+ORTO=0
+ORTO_AA=0
+FIJAZ=0
+MAXPUNTOS=0
+FORMATO_AUTONUM=%d
+TIPO_DE_Z=2
+BLOQUEA_Z=0
+]]>			</commandsWhenSelectingCode>
+			<commandsWhenOpeningDrawingWindow><![CDATA[
+zoome
+]]>			</commandsWhenOpeningDrawingWindow>
+			<macroinstructions>			</macroinstructions>
+			<speechRecognition>			</speechRecognition>
+			<menuDigi>			</menuDigi>
+	<palette name="Screen" darkening="100">
+		<color index="0" rgb="0 0 0"/>
+		<color index="1" rgb="0 0 168"/>
+		<color index="2" rgb="0 168 0"/>
+		<color index="3" rgb="0 168 168"/>
+		<color index="4" rgb="168 0 0"/>
+		<color index="5" rgb="168 0 168"/>
+		<color index="6" rgb="168 84 0"/>
+		<color index="7" rgb="168 168 168"/>
+		<color index="8" rgb="84 84 84"/>
+		<color index="9" rgb="84 84 252"/>
+		<color index="10" rgb="84 252 84"/>
+		<color index="11" rgb="84 252 252"/>
+		<color index="12" rgb="252 84 84"/>
+		<color index="13" rgb="252 84 252"/>
+		<color index="14" rgb="252 252 84"/>
+		<color index="15" rgb="252 252 252"/>
+		<color index="16" rgb="0 0 0"/>
+		<color index="17" rgb="20 20 20"/>
+		<color index="18" rgb="32 32 32"/>
+		<color index="19" rgb="44 44 44"/>
+		<color index="20" rgb="56 56 56"/>
+		<color index="21" rgb="68 68 68"/>
+		<color index="22" rgb="80 80 80"/>
+		<color index="23" rgb="96 96 96"/>
+		<color index="24" rgb="112 112 112"/>
+		<color index="25" rgb="128 128 128"/>
+		<color index="26" rgb="144 144 144"/>
+		<color index="27" rgb="160 160 160"/>
+		<color index="28" rgb="180 180 180"/>
+		<color index="29" rgb="200 200 200"/>
+		<color index="30" rgb="224 224 224"/>
+		<color index="31" rgb="252 252 252"/>
+		<color index="32" rgb="0 0 252"/>
+		<color index="33" rgb="64 0 252"/>
+		<color index="34" rgb="124 0 252"/>
+		<color index="35" rgb="188 0 252"/>
+		<color index="36" rgb="252 0 252"/>
+		<color index="37" rgb="252 0 188"/>
+		<color index="38" rgb="252 0 124"/>
+		<color index="39" rgb="252 0 64"/>
+		<color index="40" rgb="252 0 0"/>
+		<color index="41" rgb="252 64 0"/>
+		<color index="42" rgb="252 124 0"/>
+		<color index="43" rgb="252 188 0"/>
+		<color index="44" rgb="252 252 0"/>
+		<color index="45" rgb="188 252 0"/>
+		<color index="46" rgb="124 252 0"/>
+		<color index="47" rgb="64 252 0"/>
+		<color index="48" rgb="0 252 0"/>
+		<color index="49" rgb="0 252 64"/>
+		<color index="50" rgb="0 252 124"/>
+		<color index="51" rgb="0 252 188"/>
+		<color index="52" rgb="0 252 252"/>
+		<color index="53" rgb="0 188 252"/>
+		<color index="54" rgb="0 124 252"/>
+		<color index="55" rgb="0 64 252"/>
+		<color index="56" rgb="124 124 252"/>
+		<color index="57" rgb="156 124 252"/>
+		<color index="58" rgb="188 124 252"/>
+		<color index="59" rgb="220 124 252"/>
+		<color index="60" rgb="252 124 252"/>
+		<color index="61" rgb="252 124 220"/>
+		<color index="62" rgb="252 124 188"/>
+		<color index="63" rgb="252 124 156"/>
+		<color index="64" rgb="252 124 124"/>
+		<color index="65" rgb="252 156 124"/>
+		<color index="66" rgb="252 188 124"/>
+		<color index="67" rgb="252 220 124"/>
+		<color index="68" rgb="252 252 124"/>
+		<color index="69" rgb="220 252 124"/>
+		<color index="70" rgb="188 252 124"/>
+		<color index="71" rgb="156 252 124"/>
+		<color index="72" rgb="124 252 124"/>
+		<color index="73" rgb="124 252 156"/>
+		<color index="74" rgb="124 252 188"/>
+		<color index="75" rgb="124 252 220"/>
+		<color index="76" rgb="124 252 252"/>
+		<color index="77" rgb="124 220 252"/>
+		<color index="78" rgb="124 188 252"/>
+		<color index="79" rgb="124 156 252"/>
+		<color index="80" rgb="180 180 252"/>
+		<color index="81" rgb="196 180 252"/>
+		<color index="82" rgb="216 180 252"/>
+		<color index="83" rgb="232 180 252"/>
+		<color index="84" rgb="252 180 252"/>
+		<color index="85" rgb="252 180 232"/>
+		<color index="86" rgb="252 180 216"/>
+		<color index="87" rgb="252 180 196"/>
+		<color index="88" rgb="252 180 180"/>
+		<color index="89" rgb="252 196 180"/>
+		<color index="90" rgb="252 216 180"/>
+		<color index="91" rgb="252 232 180"/>
+		<color index="92" rgb="252 252 180"/>
+		<color index="93" rgb="232 252 180"/>
+		<color index="94" rgb="216 252 180"/>
+		<color index="95" rgb="196 252 180"/>
+		<color index="96" rgb="180 252 180"/>
+		<color index="97" rgb="180 252 196"/>
+		<color index="98" rgb="180 252 216"/>
+		<color index="99" rgb="180 252 232"/>
+		<color index="100" rgb="180 252 252"/>
+		<color index="101" rgb="180 232 252"/>
+		<color index="102" rgb="180 216 252"/>
+		<color index="103" rgb="180 196 252"/>
+		<color index="104" rgb="0 0 112"/>
+		<color index="105" rgb="28 0 112"/>
+		<color index="106" rgb="56 0 112"/>
+		<color index="107" rgb="84 0 112"/>
+		<color index="108" rgb="112 0 112"/>
+		<color index="109" rgb="112 0 84"/>
+		<color index="110" rgb="112 0 56"/>
+		<color index="111" rgb="112 0 28"/>
+		<color index="112" rgb="112 0 0"/>
+		<color index="113" rgb="112 28 0"/>
+		<color index="114" rgb="112 56 0"/>
+		<color index="115" rgb="112 84 0"/>
+		<color index="116" rgb="112 112 0"/>
+		<color index="117" rgb="84 112 0"/>
+		<color index="118" rgb="56 112 0"/>
+		<color index="119" rgb="28 112 0"/>
+		<color index="120" rgb="0 112 0"/>
+		<color index="121" rgb="0 112 28"/>
+		<color index="122" rgb="0 112 56"/>
+		<color index="123" rgb="0 112 84"/>
+		<color index="124" rgb="0 112 112"/>
+		<color index="125" rgb="0 84 112"/>
+		<color index="126" rgb="0 56 112"/>
+		<color index="127" rgb="0 28 112"/>
+		<color index="128" rgb="56 56 112"/>
+		<color index="129" rgb="68 56 112"/>
+		<color index="130" rgb="84 56 112"/>
+		<color index="131" rgb="96 56 112"/>
+		<color index="132" rgb="112 56 112"/>
+		<color index="133" rgb="112 56 96"/>
+		<color index="134" rgb="112 56 84"/>
+		<color index="135" rgb="112 56 68"/>
+		<color index="136" rgb="112 56 56"/>
+		<color index="137" rgb="112 68 56"/>
+		<color index="138" rgb="112 84 56"/>
+		<color index="139" rgb="112 96 56"/>
+		<color index="140" rgb="112 112 56"/>
+		<color index="141" rgb="96 112 56"/>
+		<color index="142" rgb="84 112 56"/>
+		<color index="143" rgb="68 112 56"/>
+		<color index="144" rgb="56 112 56"/>
+		<color index="145" rgb="56 112 68"/>
+		<color index="146" rgb="56 112 84"/>
+		<color index="147" rgb="56 112 96"/>
+		<color index="148" rgb="56 112 112"/>
+		<color index="149" rgb="56 96 112"/>
+		<color index="150" rgb="56 84 112"/>
+		<color index="151" rgb="56 68 112"/>
+		<color index="152" rgb="80 80 112"/>
+		<color index="153" rgb="88 80 112"/>
+		<color index="154" rgb="96 80 112"/>
+		<color index="155" rgb="104 80 112"/>
+		<color index="156" rgb="112 80 112"/>
+		<color index="157" rgb="112 80 104"/>
+		<color index="158" rgb="112 80 96"/>
+		<color index="159" rgb="112 80 88"/>
+		<color index="160" rgb="112 80 80"/>
+		<color index="161" rgb="112 88 80"/>
+		<color index="162" rgb="112 96 80"/>
+		<color index="163" rgb="112 104 80"/>
+		<color index="164" rgb="112 112 80"/>
+		<color index="165" rgb="104 112 80"/>
+		<color index="166" rgb="96 112 80"/>
+		<color index="167" rgb="88 112 80"/>
+		<color index="168" rgb="80 112 80"/>
+		<color index="169" rgb="80 112 88"/>
+		<color index="170" rgb="80 112 96"/>
+		<color index="171" rgb="80 112 104"/>
+		<color index="172" rgb="80 112 112"/>
+		<color index="173" rgb="80 104 112"/>
+		<color index="174" rgb="80 96 112"/>
+		<color index="175" rgb="80 88 112"/>
+		<color index="176" rgb="0 0 64"/>
+		<color index="177" rgb="16 0 64"/>
+		<color index="178" rgb="32 0 64"/>
+		<color index="179" rgb="48 0 64"/>
+		<color index="180" rgb="64 0 64"/>
+		<color index="181" rgb="64 0 48"/>
+		<color index="182" rgb="64 0 32"/>
+		<color index="183" rgb="64 0 16"/>
+		<color index="184" rgb="64 0 0"/>
+		<color index="185" rgb="64 16 0"/>
+		<color index="186" rgb="64 32 0"/>
+		<color index="187" rgb="64 48 0"/>
+		<color index="188" rgb="64 64 0"/>
+		<color index="189" rgb="48 64 0"/>
+		<color index="190" rgb="32 64 0"/>
+		<color index="191" rgb="16 64 0"/>
+		<color index="192" rgb="0 64 0"/>
+		<color index="193" rgb="0 64 16"/>
+		<color index="194" rgb="0 64 32"/>
+		<color index="195" rgb="0 64 48"/>
+		<color index="196" rgb="0 64 64"/>
+		<color index="197" rgb="0 48 64"/>
+		<color index="198" rgb="0 32 64"/>
+		<color index="199" rgb="0 16 64"/>
+		<color index="200" rgb="32 32 64"/>
+		<color index="201" rgb="40 32 64"/>
+		<color index="202" rgb="48 32 64"/>
+		<color index="203" rgb="56 32 64"/>
+		<color index="204" rgb="64 32 64"/>
+		<color index="205" rgb="64 32 56"/>
+		<color index="206" rgb="64 32 48"/>
+		<color index="207" rgb="64 32 40"/>
+		<color index="208" rgb="64 32 32"/>
+		<color index="209" rgb="64 40 32"/>
+		<color index="210" rgb="64 48 32"/>
+		<color index="211" rgb="64 56 32"/>
+		<color index="212" rgb="64 64 32"/>
+		<color index="213" rgb="56 64 32"/>
+		<color index="214" rgb="48 64 32"/>
+		<color index="215" rgb="40 64 32"/>
+		<color index="216" rgb="32 64 32"/>
+		<color index="217" rgb="32 64 40"/>
+		<color index="218" rgb="32 64 48"/>
+		<color index="219" rgb="32 64 56"/>
+		<color index="220" rgb="32 64 64"/>
+		<color index="221" rgb="32 56 64"/>
+		<color index="222" rgb="32 48 64"/>
+		<color index="223" rgb="32 40 64"/>
+		<color index="224" rgb="44 44 64"/>
+		<color index="225" rgb="48 44 64"/>
+		<color index="226" rgb="52 44 64"/>
+		<color index="227" rgb="60 44 64"/>
+		<color index="228" rgb="64 44 64"/>
+		<color index="229" rgb="64 44 60"/>
+		<color index="230" rgb="64 44 52"/>
+		<color index="231" rgb="64 44 48"/>
+		<color index="232" rgb="64 44 44"/>
+		<color index="233" rgb="64 48 44"/>
+		<color index="234" rgb="64 52 44"/>
+		<color index="235" rgb="64 60 44"/>
+		<color index="236" rgb="64 64 44"/>
+		<color index="237" rgb="60 64 44"/>
+		<color index="238" rgb="52 64 44"/>
+		<color index="239" rgb="48 64 44"/>
+		<color index="240" rgb="44 64 44"/>
+		<color index="241" rgb="44 64 48"/>
+		<color index="242" rgb="44 64 52"/>
+		<color index="243" rgb="44 64 60"/>
+		<color index="244" rgb="44 64 64"/>
+		<color index="245" rgb="44 60 64"/>
+		<color index="246" rgb="44 52 64"/>
+		<color index="247" rgb="44 48 64"/>
+		<color index="248" rgb="0 0 0"/>
+		<color index="249" rgb="0 0 0"/>
+		<color index="250" rgb="0 0 0"/>
+		<color index="251" rgb="0 0 0"/>
+		<color index="252" rgb="0 0 0"/>
+		<color index="253" rgb="0 0 0"/>
+		<color index="254" rgb="0 0 0"/>
+		<color index="255" rgb="0 0 0"/>
+	</palette>
+	<styles>
+		<style name="" description="">
+			<odt:representation/>
+		</style>
+	</styles>
+<databaseSchema>
+</databaseSchema>
+	<modeloSemantico:semanticModel>
+	</modeloSemantico:semanticModel>
+	<codes>
+		<code name="010401" description="Límite de nación" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="010401"/>
+				<iobind:transform code="010401"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="010401" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="010401">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="010401" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="010401" textHeight="1.000000" />
+				<ioshp:transform nameSHP="010401" schema="010401" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#04aae2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4aae2" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="010101" description="Límite de municipio" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="178" color-stereo="178" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="010101"/>
+				<iobind:transform code="010101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="010101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="010101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="010101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="010101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="010101" schema="010101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#a125a2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#a125a2" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="010301" description="Límite de autonomía" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="010301"/>
+				<iobind:transform code="010301"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="010301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="010301">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="010301" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="010301" textHeight="1.000000" />
+				<ioshp:transform nameSHP="010301" schema="010301" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#5fe665" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#5fe665" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="010201" description="Límite de provincia" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="010201"/>
+				<iobind:transform code="010201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="010201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="010201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="010201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="010201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="010201" schema="010201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#0af77d" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#af77d" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="010102" description="Límite anejo o municipio agregado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="010102"/>
+				<iobind:transform code="010102"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="010102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="010102">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="010102" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="010102" textHeight="1.000000" />
+				<ioshp:transform nameSHP="010102" schema="010102" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#e2cdfe" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e2cdfe" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="018507" description="Mojón intermunicipal" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="251" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="018507"/>
+				<iobind:transform code="018507"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="018507" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="018507">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="018507" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="018507" textHeight="1.000000" />
+				<ioshp:transform nameSHP="018507" schema="018507" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#820fc2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#82fc2" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="018506" description="Mojón tres términos" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="018506"/>
+				<iobind:transform code="018506"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="018506" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="018506">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="018506" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="018506" textHeight="1.000000" />
+				<ioshp:transform nameSHP="018506" schema="018506" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#15b726" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#15b726" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="028110" description="Señal de nivelación" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="67" color-stereo="67" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="028110"/>
+				<iobind:transform code="028110"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="028110" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="028110">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="028110" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="028110" textHeight="1.000000" />
+				<ioshp:transform nameSHP="028110" schema="028110" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#22be1c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#22be1c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="028112" description="Punto acotado" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="028112"/>
+				<iobind:transform code="028112"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="028112" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="028112">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="028112" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="028112" textHeight="1.000000" />
+				<ioshp:transform nameSHP="028112" schema="028112" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#3acee2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3acee2" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="030102" description="Curso fluvial" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="030102"/>
+				<iobind:transform code="030102"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="030102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="030102">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="030102" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="030102" textHeight="1.000000" />
+				<ioshp:transform nameSHP="030102" schema="030102" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#33b8c7" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#33b8c7" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="030202" description="Curso fluvial (a trazos)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="3" color-stereo="3" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="030202"/>
+				<iobind:transform code="030202"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="030202" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="030202">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="030202" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="030202" textHeight="1.000000" />
+				<ioshp:transform nameSHP="030202" schema="030202" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#2d4c0e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#2d4ce" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="030302" description="Margen de acequia/canal" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="81" color-stereo="81" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="030302"/>
+				<iobind:transform code="030302"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="030302" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="030302">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="030302" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="030302" textHeight="1.000000" />
+				<ioshp:transform nameSHP="030302" schema="030302" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#61e64b" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#61e64b" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="032301" description="Línea de costa" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="032301"/>
+				<iobind:transform code="032301"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="032301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="032301">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="032301" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="032301" textHeight="1.000000" />
+				<ioshp:transform nameSHP="032301" schema="032301" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#5cca2e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#5cca2e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="033301" description="Contorno de lago/laguna" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="32" color-stereo="32" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="033301"/>
+				<iobind:transform code="033301"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="033301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="033301">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="033301" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="033301" textHeight="1.000000" />
+				<ioshp:transform nameSHP="033301" schema="033301" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#5d8e20" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#5d8e20" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="037101" description="Pozo (perímetro)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="186" color-stereo="186" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="037101"/>
+				<iobind:transform code="037101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="037101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="037101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="037101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="037101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="037101" schema="037101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#ff4cdf" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#ff4cdf" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="038101" description="Pozo (puntual)" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="186" color-stereo="186" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="038101"/>
+				<iobind:transform code="038101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="038101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="038101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="038101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="038101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="038101" schema="038101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#38630c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3863c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="038102" description="Fuente/Estanque/Balsa/Depósito (puntual)" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="038102"/>
+				<iobind:transform code="038102"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="038102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="038102">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="038102" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="038102" textHeight="1.000000" />
+				<ioshp:transform nameSHP="038102" schema="038102" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#ffccc8" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#ffccc8" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="017107" description="Dique de embalse o presa (perímetro)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="017107"/>
+				<iobind:transform code="017107"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="017107" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="017107">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="017107" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="017107" textHeight="1.000000" />
+				<ioshp:transform nameSHP="017107" schema="017107" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#52fc3e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#52fc3e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060102" description="Margen de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060102"/>
+				<iobind:transform code="060102"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060102">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060102" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060102" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060102" schema="060102" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#e3ea70" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e3ea70" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060104" description="Eje de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060104"/>
+				<iobind:transform code="060104"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060104">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060104" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060104" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060104" schema="060104" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#03da3a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3da3a" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060202" description="Margen de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="39" color-stereo="39" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060202"/>
+				<iobind:transform code="060202"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060202" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060202">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060202" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060202" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060202" schema="060202" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#530ba6" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#53ba6" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060204" description="Eje de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="42" color-stereo="42" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060204"/>
+				<iobind:transform code="060204"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060204" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060204">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060204" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060204" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060204" schema="060204" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#1c8a13" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#1c8a13" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060402" description="Margen de camino, vía pecuaria" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="43" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060402"/>
+				<iobind:transform code="060402"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060402" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060402">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060402" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060402" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060402" schema="060402" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#c98a79" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#c98a79" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060404" description="Eje de camino, vía pecuaria" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="42" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060109"/>
+				<iobind:transform code="060109"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060109" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060109">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060109" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060109" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060109" schema="060109" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#20783e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#20783e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="060109" description="Teleférico/funicular" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="61" color-stereo="61" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="060109"/>
+				<iobind:transform code="060109"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="060109" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="060109">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="060109" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="060109" textHeight="1.000000" />
+				<ioshp:transform nameSHP="060109" schema="060109" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#404c68" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#404c68" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="061104" description="FF.CC" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="30" color-stereo="30" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="061104"/>
+				<iobind:transform code="061104"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="061104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="061104">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="061104" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="061104" textHeight="1.000000" />
+				<ioshp:transform nameSHP="061104" schema="061104" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#e68716" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e68716" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="067121" description="Perímetro de puente/alcantarilla" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="172" color-stereo="172" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="067121"/>
+				<iobind:transform code="067121"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="067121" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="067121">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="067121" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="067121" textHeight="1.000000" />
+				<ioshp:transform nameSHP="067121" schema="067121" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#8b5819" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8b5819" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="068401" description="Hito kilométrico autopistas/carreteras" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="138" color-stereo="138" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="068401"/>
+				<iobind:transform code="068401"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="068401" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="068401">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="068401" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="068401" textHeight="1.000000" />
+				<ioshp:transform nameSHP="068401" schema="068401" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#ef1b46" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#ef1b46" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="108100" description="Vértice geodésico sin especificar" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="167" color-stereo="167" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="108100"/>
+				<iobind:transform code="108100"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="108100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="108100">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="108100" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="108100" textHeight="1.000000" />
+				<ioshp:transform nameSHP="108100" schema="108100" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#03439f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3439f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="108101" description="Vértice geodésico (primer orden)" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="94" color-stereo="94" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="108101"/>
+				<iobind:transform code="108101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="108101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="108101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="108101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="108101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="108101" schema="108101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#63a89b" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#63a89b" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="108104" description="Vértice topográfico de Red Local Catastral. Punto de poligonal" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="213" color-stereo="213" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="108104"/>
+				<iobind:transform code="108104"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="108104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="108104">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="108104" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="108104" textHeight="1.000000" />
+				<ioshp:transform nameSHP="108104" schema="108104" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#4b5c68" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4b5c68" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="111101" description="Límite suelo narutaleza urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="2" color-stereo="2" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="111101"/>
+				<iobind:transform code="111101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="111101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="111101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="111101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="111101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="111101" schema="111101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#dd1a3f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#dd1a3f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="111000" description="Límite de polígono de valoración" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="14" color-stereo="14" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="111000"/>
+				<iobind:transform code="111000"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="111000" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="111000">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="111000" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="111000" textHeight="1.000000" />
+				<ioshp:transform nameSHP="111000" schema="111000" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#19e61c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#19e61c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="111200" description="Límite de estudio de mercado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="52" color-stereo="52" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="Límite de estudio de mercado"/>
+				<iobind:transform code="Límite de estudio de mercado"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="Límite de estudio de mercado" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="Límite de estudio de mercado">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="Límite de estudio de mercado" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="Límite de estudio de mercado" textHeight="1.000000" />
+				<ioshp:transform nameSHP="Límite de estudio de mercado" schema="Límite de estudio de mercado" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#4cbd9f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4cbd9f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="111300" description="Delimitación urbanística genérica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="111300"/>
+				<iobind:transform code="111300"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="111300" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="111300">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="111300" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="111300" textHeight="1.000000" />
+				<ioshp:transform nameSHP="111300" schema="111300" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#3ebc24" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3ebc24" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="120100" description="Límite de polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="106" color-stereo="106" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="120100"/>
+				<iobind:transform code="120100"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="120100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="120100">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="120100" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="120100" textHeight="1.000000" />
+				<ioshp:transform nameSHP="120100" schema="120100" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#88605a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#88605a" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="120200" description="Límite de parcela/descuento rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="120200"/>
+				<iobind:transform code="120200"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="120200" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="120200">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="120200" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="120200" textHeight="1.000000" />
+				<ioshp:transform nameSHP="120200" schema="120200" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#6f368b" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#6f368b" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="120500" description="Límite de subparcela rústica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="120500"/>
+				<iobind:transform code="120500"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="120500" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="120500">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="120500" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="120500" textHeight="1.000000" />
+				<ioshp:transform nameSHP="120500" schema="120500" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#7ef112" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#7ef112" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="120180" description="Límite de polígono rústico con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="128" color-stereo="128" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="120180"/>
+				<iobind:transform code="120180"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="120180" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="120180">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="120180" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="120180" textHeight="1.000000" />
+				<ioshp:transform nameSHP="120180" schema="120180" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#75286f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#75286f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="120280" description="Límite de parcela/descuento rústico con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="65" color-stereo="65" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="120280"/>
+				<iobind:transform code="120280"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="120280" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="120280">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="120280" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="120280" textHeight="1.000000" />
+				<ioshp:transform nameSHP="120280" schema="120280" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f5c6fa" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f5c6fa" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="120580" description="Límite de subparcela rústica con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="117" color-stereo="117" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="120580"/>
+				<iobind:transform code="120580"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="120580" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="120580">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="120580" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="120580" textHeight="1.000000" />
+				<ioshp:transform nameSHP="120580" schema="120580" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#cd4d4e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#cd4d4e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="125101" description="Centroide de polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="185" color-stereo="185" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="125101"/>
+				<iobind:transform code="125101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="125101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="125101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="125101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="125101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="125101" schema="125101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#564467" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#564467" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="125201" description="Centroide de parcela/descuento rústicos" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="52" color-stereo="52" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="125201"/>
+				<iobind:transform code="125201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="125201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="125201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="125201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="125201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="125201" schema="125201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#e886c5" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e886c5" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="125501" description="Centroide subparcela rústica (cultivo improductivo)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="77" color-stereo="77" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="125501"/>
+				<iobind:transform code="125501"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="125501" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="125501">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="125501" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="125501" textHeight="1.000000" />
+				<ioshp:transform nameSHP="125501" schema="125501" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#0db1e0" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#db1e0" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="125510" description="Centroide de subparcela rústica (construcción)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="133" color-stereo="133" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="125510"/>
+				<iobind:transform code="125510"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="125510" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="125510">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="125510" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="125510" textHeight="1.000000" />
+				<ioshp:transform nameSHP="125510" schema="125510" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#80a99c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#80a99c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="130100" description="Límite de manzana urbana o polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="139" color-stereo="139" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="130100"/>
+				<iobind:transform code="130100"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="130100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="130100">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="130100" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="130100" textHeight="1.000000" />
+				<ioshp:transform nameSHP="130100" schema="130100" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#4c475a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4c475a" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="130200" description="Límite de parcela rústica o urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="164" color-stereo="164" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="130200"/>
+				<iobind:transform code="130200"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="130200" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="130200">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="130200" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="130200" textHeight="1.000000" />
+				<ioshp:transform nameSHP="130200" schema="130200" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#c4de3c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#c4de3c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="130500" description="Límite de subparcela de cultivo o construcción" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="182" color-stereo="182" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="130500"/>
+				<iobind:transform code="130500"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="130500" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="130500">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="130500" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="130500" textHeight="1.000000" />
+				<ioshp:transform nameSHP="130500" schema="130500" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#5eec9a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#5eec9a" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="135101" description="Centroide de manzana o polígono" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="217" color-stereo="217" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="135101"/>
+				<iobind:transform code="135101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="135101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="135101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="135101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="135101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="135101" schema="135101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#47b7da" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#47b7da" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="135201" description="Centroide de parcela rústica o urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="113" color-stereo="113" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="135201"/>
+				<iobind:transform code="135201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="135201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="135201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="135201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="135201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="135201" schema="135201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#cf1701" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#cf171" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="135501" description="Centroide de subparcela (cultivo/improductivo)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="115" color-stereo="115" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="135501"/>
+				<iobind:transform code="135501"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="135501" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="135501">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="135501" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="135501" textHeight="1.000000" />
+				<ioshp:transform nameSHP="135501" schema="135501" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f68700" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f6870" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="135510" description="Centroide de subparcela (construcción)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="101" color-stereo="101" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="135510"/>
+				<iobind:transform code="135510"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="135510" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="135510">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="135510" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="135510" textHeight="1.000000" />
+				<ioshp:transform nameSHP="135510" schema="135510" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#10c729" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#10c729" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="140100" description="Límite de manzana urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="140100"/>
+				<iobind:transform code="140100"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="140100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="140100">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="140100" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="140100" textHeight="1.000000" />
+				<ioshp:transform nameSHP="140100" schema="140100" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#81a439" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#81a439" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="140190" description="Límite de manzana urbana bajo rasante" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="129" color-stereo="129" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="140190"/>
+				<iobind:transform code="140190"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="140190" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="140190">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="140190" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="140190" textHeight="1.000000" />
+				<ioshp:transform nameSHP="140190" schema="140190" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#619d16" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#619d16" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="140200" description="Límite de parcela urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="10" color-stereo="10" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="140200"/>
+				<iobind:transform code="140200"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="140200" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="140200">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="140200" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="140200" textHeight="1.000000" />
+				<ioshp:transform nameSHP="140200" schema="140200" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f8930d" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f893d" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="140290" description="Límite de parcela urbana bajo rasante" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="159" color-stereo="159" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="140290"/>
+				<iobind:transform code="140290"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="140290" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="140290">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="140290" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="140290" textHeight="1.000000" />
+				<ioshp:transform nameSHP="140290" schema="140290" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#2571f2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#2571f2" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="140500" description="Límite de subparcela urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="152" color-stereo="152" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="140500"/>
+				<iobind:transform code="140500"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="140500" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="140500">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="140500" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="140500" textHeight="1.000000" />
+				<ioshp:transform nameSHP="140500" schema="140500" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#946091" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#946091" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="140590" description="Límite de subparcela urbana bajo rasante" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="180" color-stereo="180" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="140590"/>
+				<iobind:transform code="140590"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="140590" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="140590">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="140590" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="140590" textHeight="1.000000" />
+				<ioshp:transform nameSHP="140590" schema="140590" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f30383" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f3383" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="145101" description="Centroide de manzana urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="133" color-stereo="133" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="145101"/>
+				<iobind:transform code="145101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="145101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="145101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="145101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="145101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="145101" schema="145101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#db792f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#db792f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="145201" description="Centroide de parcela urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="145201"/>
+				<iobind:transform code="145201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="145201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="145201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="145201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="145201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="145201" schema="145201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f693e7" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f693e7" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="145501" description="Centroide de subparcela urbana (construcción/solar)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="212" color-stereo="212" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="145501"/>
+				<iobind:transform code="145501"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="145501" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="145501">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="145501" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="145501" textHeight="1.000000" />
+				<ioshp:transform nameSHP="145501" schema="145501" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#a0f37d" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#a0f37d" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="145510" description="Centroide de subparcela urbana (cultivo/improductivo)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="222" color-stereo="222" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="145510"/>
+				<iobind:transform code="145510"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="145510" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="145510">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="145510" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="145510" textHeight="1.000000" />
+				<ioshp:transform nameSHP="145510" schema="145510" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#837a2f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#837a2f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="160101" description="Línea de acera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="160101"/>
+				<iobind:transform code="160101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="160101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="160101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="160101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="160101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="160101" schema="160101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#960238" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#96238" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="160131" description="Línea indeterminada (continua)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="239" color-stereo="239" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="160131"/>
+				<iobind:transform code="160131"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="160131" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="160131">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="160131" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="160131" textHeight="1.000000" />
+				<ioshp:transform nameSHP="160131" schema="160131" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#eb2df6" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#eb2df6" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="160132" description="Línea indeterminada (a trazos)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="80" color-stereo="80" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="160132"/>
+				<iobind:transform code="160132"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="160132" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="160132">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="160132" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="160132" textHeight="1.000000" />
+				<ioshp:transform nameSHP="160132" schema="160132" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#6604b8" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#664b8" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="160201" description="Línea eléctrica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="238" color-stereo="238" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="160201"/>
+				<iobind:transform code="160201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="160201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="160201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="160201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="160201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="160201" schema="160201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f32b09" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f32b9" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="160202" description="Línea telefónica/telegráfica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="87" color-stereo="87" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="160202"/>
+				<iobind:transform code="160202"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="160202" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="160202">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="160202" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="160202" textHeight="1.000000" />
+				<ioshp:transform nameSHP="160202" schema="160202" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#8e7680" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8e7680" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="160300" description="Línea de parcelario aparente" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="81" color-stereo="81" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="160300"/>
+				<iobind:transform code="160300"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="160300" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="160300">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="160300" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="160300" textHeight="1.000000" />
+				<ioshp:transform nameSHP="160300" schema="160300" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#7ab6b2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#7ab6b2" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="161101" description="Eje de red viaria" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="161101"/>
+				<iobind:transform code="161101"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="161101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="161101">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="161101" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="161101" textHeight="1.000000" />
+				<ioshp:transform nameSHP="161101" schema="161101" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#73a7b7" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#73a7b7" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="167103" description="Monumento" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="167103"/>
+				<iobind:transform code="167103"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="167103" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="167103">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="167103" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="167103" textHeight="1.000000" />
+				<ioshp:transform nameSHP="167103" schema="167103" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#2c7b52" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#2c7b52" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="167104" description="Escalera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="44" color-stereo="44" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="167104"/>
+				<iobind:transform code="167104"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="167104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="167104">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="167104" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="167104" textHeight="1.000000" />
+				<ioshp:transform nameSHP="167104" schema="167104" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#6507a3" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#657a3" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="167106" description="Acceso a paso subterráneo" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="167106"/>
+				<iobind:transform code="167106"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="167106" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="167106">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="167106" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="167106" textHeight="1.000000" />
+				<ioshp:transform nameSHP="167106" schema="167106" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#626f40" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#626f40" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="167111" description="Transformador de red eléctrica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="167111"/>
+				<iobind:transform code="167111"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="167111" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="167111">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="167111" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="167111" textHeight="1.000000" />
+				<ioshp:transform nameSHP="167111" schema="167111" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#916687" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#916687" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="167167" description="Cabina/kiosco indeterminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="32" color-stereo="32" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="167167"/>
+				<iobind:transform code="167167"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="167167" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="167167">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="167167" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="167167" textHeight="1.000000" />
+				<ioshp:transform nameSHP="167167" schema="167167" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#74832f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#74832f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="167201" description="Línea/perímetro de zona verde, deportiva, industrial, militar, portuaria, etc." priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="122" color-stereo="122" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="167201"/>
+				<iobind:transform code="167201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="167201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="167201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="167201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="167201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="167201" schema="167201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#087e76" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#87e76" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="168100" description="Elemento de infraestructura/mobiliario genérico" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="83" color-stereo="83" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="168100"/>
+				<iobind:transform code="168100"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="168100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="168100">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="168100" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="168100" textHeight="1.000000" />
+				<ioshp:transform nameSHP="168100" schema="168100" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#290785" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#29785" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="168103" description="Monumento" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="22" color-stereo="22" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="168103"/>
+				<iobind:transform code="168103"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="168103" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="168103">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="168103" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="168103" textHeight="1.000000" />
+				<ioshp:transform nameSHP="168103" schema="168103" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#6f93ea" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#6f93ea" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="168113" description="Torre/Poste de conducción" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="56" color-stereo="56" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="168113"/>
+				<iobind:transform code="168113"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="168113" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="168113">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="168113" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="168113" textHeight="1.000000" />
+				<ioshp:transform nameSHP="168113" schema="168113" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#0dcf6e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#dcf6e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="168116" description="Farola" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="107" color-stereo="107" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="168116"/>
+				<iobind:transform code="168116"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="168116" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="168116">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="168116" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="168116" textHeight="1.000000" />
+				<ioshp:transform nameSHP="168116" schema="168116" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#f4244a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f4244a" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="168153" description="Árbol" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="21" color-stereo="21" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="168153"/>
+				<iobind:transform code="168153"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="168153" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="168153">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="168153" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="168153" textHeight="1.000000" />
+				<ioshp:transform nameSHP="168153" schema="168153" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#d3758e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#d3758e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="168168" description="Acceso a garajes/aparcamiento público" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="134" color-stereo="134" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="168168"/>
+				<iobind:transform code="168168"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="168168" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="168168">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="168168" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="168168" textHeight="1.000000" />
+				<ioshp:transform nameSHP="168168" schema="168168" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#8fcead" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8fcead" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189100" description="Otros textos de DIVISIONES ADMINISTRATIVAS" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="92" color-stereo="92" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189100"/>
+				<iobind:transform code="189100"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189100">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189100" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189100" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189100" schema="189100" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#0f5698" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f5698" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189102" description="Texto de nación, comunidad autónoma, privincia y término municipal" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="164" color-stereo="164" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189102"/>
+				<iobind:transform code="189102"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189102">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189102" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189102" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189102" schema="189102" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#c8f366" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#c8f366" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189104" description="Texto de distrito" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="230" color-stereo="230" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189104"/>
+				<iobind:transform code="189104"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189104">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189104" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189104" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189104" schema="189104" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#e51240" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e51240" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189105" description="Texto de barrio" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="157" color-stereo="157" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189105"/>
+				<iobind:transform code="189105"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189105" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189105">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189105" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189105" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189105" schema="189105" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#70d24c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#70d24c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189201" description="Texto de urbanizaciones" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="60" color-stereo="60" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189201"/>
+				<iobind:transform code="189201"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189201">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189201" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189201" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189201" schema="189201" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#87ba39" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#87ba39" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189203" description="Texto de parajes y comarcas" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="240" color-stereo="240" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189203"/>
+				<iobind:transform code="189203"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189203" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189203">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189203" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189203" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189203" schema="189203" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#10febe" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#10febe" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189300" description="Otros textos de INFORMACIÓN URBANA o RÚSTICA" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="212" color-stereo="212" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189300"/>
+				<iobind:transform code="189300"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189300" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189300">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189300" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189300" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189300" schema="189300" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#99f641" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#99f641" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189301" description="Texto de vías públicas" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="23" color-stereo="23" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189301"/>
+				<iobind:transform code="189301"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189301">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189301" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189301" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189301" schema="189301" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#fd84c9" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#fd84c9" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189401" description="Texto de número de policía parcela" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="74" color-stereo="74" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189401"/>
+				<iobind:transform code="189401"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189401" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189401">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189401" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189401" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189401" schema="189401" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#d0c26c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#d0c26c" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189600" description="Otros textos de HIDROGRAFÍA" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="45" color-stereo="45" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189600"/>
+				<iobind:transform code="189600"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189600" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189600">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189600" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189600" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189600" schema="189600" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#501ef9" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#501ef9" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189601" description="Texto de mar" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="3" color-stereo="3" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189601"/>
+				<iobind:transform code="189601"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189601" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189601">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189601" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189601" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189601" schema="189601" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#639626" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#639626" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189602" description="Texto de río" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189602"/>
+				<iobind:transform code="189602"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189602" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189602">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189602" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189602" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189602" schema="189602" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#363ec8" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#363ec8" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189604" description="Texto de embalse, lago, pantano" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="182" color-stereo="182" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189604"/>
+				<iobind:transform code="189604"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189604" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189604">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189604" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189604" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189604" schema="189604" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#3215aa" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3215aa" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189605" description="Texto de canal" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="120" color-stereo="120" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189605"/>
+				<iobind:transform code="189605"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189605" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189605">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189605" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189605" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189605" schema="189605" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#50dfa3" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#50dfa3" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189700" description="Otros textos de VEGETACIÓN Y ACCIDENTES GEOGRAFICOS" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189700"/>
+				<iobind:transform code="189700"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189700" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189700">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189700" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189700" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189700" schema="189700" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#a59bde" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#a59bde" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189701" description="Texto de accidente geográfico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189701"/>
+				<iobind:transform code="189701"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189701" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189701">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189701" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189701" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189701" schema="189701" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#1e58f0" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#1e58f0" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189703" description="Texto de cota de curva de nivel" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="168" color-stereo="168" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189703"/>
+				<iobind:transform code="189703"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189703" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189703">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189703" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189703" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189703" schema="189703" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#b938d3" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#b938d3" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189704" description="Texto de vegetación/cultivo" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="149" color-stereo="149" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189704"/>
+				<iobind:transform code="189704"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189704" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189704">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189704" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189704" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189704" schema="189704" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#a8aaae" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#a8aaae" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189800" description="Otros textos de VIAS DE COMUNICACIÓN" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="25" color-stereo="25" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189800"/>
+				<iobind:transform code="189800"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189800" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189800">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189800" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189800" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189800" schema="189800" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#af045e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#af45e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189801" description="Texto de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="207" color-stereo="207" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189801"/>
+				<iobind:transform code="189801"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189801" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189801">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189801" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189801" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189801" schema="189801" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#e4f97e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e4f97e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189802" description="Texto de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="189" color-stereo="189" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189802"/>
+				<iobind:transform code="189802"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189802" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189802">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189802" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189802" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189802" schema="189802" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#58cb7d" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#58cb7d" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189803" description="Texto de camino" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="161" color-stereo="161" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189803"/>
+				<iobind:transform code="189803"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189803" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189803">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189803" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189803" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189803" schema="189803" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#8c342f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8c342f" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="189804" description="Texto de ferrocarril" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="249" color-stereo="249" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="189804"/>
+				<iobind:transform code="189804"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="189804" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="189804">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="189804" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="189804" textHeight="1.000000" />
+				<ioshp:transform nameSHP="189804" schema="189804" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#fb7f8e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#fb7f8e" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="999905" description="Límite de actualización cartográfica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="26" color-stereo="26" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="999905"/>
+				<iobind:transform code="999905"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="999905" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="999905">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="999905" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="999905" textHeight="1.000000" />
+				<ioshp:transform nameSHP="999905" schema="999905" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#551c2b" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#551c2b" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="037102" description="Fuente/Estanque/Balsa/Depósito (perímetro)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="037102"/>
+				<iobind:transform code="037102"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="037102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="037102">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="037102" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="037102" textHeight="1.000000" />
+				<ioshp:transform nameSHP="037102" schema="037102" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#5a61eb" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#5a61eb" point-size="1.000000" />
+			</io>
+		</code>
+	</codes>
+</digitab>
