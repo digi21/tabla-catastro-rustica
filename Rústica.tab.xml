@@ -351,12 +351,12 @@ zoome
 <databaseSchema>
 <table name="ALTIPUN" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="ATRIBUTO" title="ATRIBUTO" type="C" length="16" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="COTA" title="COTA" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="COTA" title="COTA" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%ENTITY_FIRST_VERTEX_Z%" forceDefaultValue="1" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="AMBITO" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -368,8 +368,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="BLOQUEO" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -380,16 +380,16 @@ zoome
 	<field name="USUARIO" title="USUARIO" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="TIPO" title="TIPO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NOTAS" title="NOTAS" type="C" length="100" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="Carvia" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="VIA" title="VIA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="DENOMINA" title="DENOMINA" type="C" length="25" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="CONSTRU" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -404,8 +404,8 @@ zoome
 	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -423,8 +423,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="USUARIO" title="USUARIO" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -447,8 +447,8 @@ zoome
 	<field name="VISITADO" title="VISITADO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="OBSERV" title="OBSERV" type="C" length="50" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="NOMBRE" title="NOMBRE" type="C" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 </table>
 <table name="DISTRITO" description="">
@@ -461,43 +461,43 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="MODIFICA" title="MODIFICA" type="C" length="25" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 </table>
 <table name="EJES" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="VIA" title="VIA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 </table>
 <table name="ELEMLIN" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="VIA" title="VIA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="ELEMPUN" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="ATRIBUTO" title="ATRIBUTO" type="C" length="16" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="ELEMTEX" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="ROTULO" title="ROTULO" type="C" length="32" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="VIA" title="VIA" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -506,10 +506,10 @@ zoome
 </table>
 <table name="ERRLIN" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="GEORREF_RECINTOS" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -535,8 +535,8 @@ zoome
 	<field name="ESCALA_Y" title="ESCALA_Y" type="N" length="9" bgColor="#ffffff" decimalCount="6" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="RMS_TRANS" title="RMS_TRANS" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="RMS_ORIG" title="RMS_ORIG" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="GEORREF_VECTORES" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -559,8 +559,8 @@ zoome
 	<field name="DX" title="DX" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="DY" title="DY" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="RESIDUO" title="RESIDUO" type="N" length="7" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="GRADO_DESARROLLO" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -587,8 +587,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="BOLETIN" title="BOLETIN" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NBOLETIN" title="NBOLETIN" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NPARCELAS" title="NPARCELAS" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -596,15 +596,15 @@ zoome
 <table name="HOJAS" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="HOJA" title="HOJA" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="LIMITES" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TTGGSS" title="TTGGSS" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_CODE%" forceDefaultValue="1" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="MAPA" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -621,8 +621,8 @@ zoome
 	<field name="HCY" title="HCY" type="N" length="12" bgColor="#ffffff" decimalCount="3" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="TIPOMALLA" title="TIPOMALLA" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="ESTADO" title="ESTADO" type="N" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="FECHAPUB" title="FECHAPUB" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="COMENTA" title="COMENTA" type="C" length="80" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PRECISION" title="PRECISION" type="N" length="4" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -639,8 +639,8 @@ zoome
 	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -652,8 +652,8 @@ zoome
 	<field name="DELEGACIO" title="DELEGACIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="MUESTRA" title="MUESTRA" type="C" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="PARCELA" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -670,8 +670,8 @@ zoome
 	<field name="NUMERODUP" title="NUMERODUP" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -688,8 +688,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="SIM_BLOQUEO" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -698,8 +698,8 @@ zoome
 	<field name="USUARIO" title="USUARIO" type="C" length="12" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="TABLA" title="TABLA" type="C" length="30" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NOTAS" title="NOTAS" type="C" length="40" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="EJERCICIO" title="EJERCICIO" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMERO" title="NUMERO" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="CONTROL" title="CONTROL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -716,8 +716,8 @@ zoome
 	<field name="COORX" title="COORX" type="N" length="10" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="COORY" title="COORY" type="N" length="11" bgColor="#ffffff" decimalCount="2" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="NUMSYMBOL" title="NUMSYMBOL" type="N" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="AREA" title="AREA" type="N" length="9" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -737,8 +737,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="URBANIS" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -750,8 +750,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="ZONVALOR_CCON" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -763,8 +763,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 <table name="ZONVALOR_OCMI" description="">
 	<field name="MAPA" title="MAPA" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -776,8 +776,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 	<field name="CODZONA" title="CODZONA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="MUNZONA" title="MUNZONA" type="N" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="CODUSO" title="CODUSO" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
@@ -817,8 +817,8 @@ zoome
 	<field name="XOFFSET" title="XOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="YOFFSET" title="YOFFSET" type="N" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
 	<field name="AREA" title="AREA" type="N" length="11" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHAALTA" title="FECHAALTA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
-	<field name="FECHABAJA" title="FECHABAJA" type="N" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" />
+	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" />
 </table>
 </databaseSchema>
 	<modeloSemantico:semanticModel>
@@ -829,6 +829,9 @@ zoome
 			<io>
 				<iobin:transform code="010401"/>
 				<iobind:transform code="010401"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="010401" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -849,10 +852,13 @@ zoome
 			</io>
 		</code>
 		<code name="LIMITES" description="Código desconocido en la tabla LIMITES" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="LIMITES"/>
 				<iobind:transform code="LIMITES"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="LIMITES" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -878,6 +884,9 @@ zoome
 				<iobin:transform code="010101"/>
 				<iobind:transform code="010101"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="010101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -901,6 +910,9 @@ zoome
 			<io>
 				<iobin:transform code="010301"/>
 				<iobind:transform code="010301"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="010301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -926,6 +938,9 @@ zoome
 				<iobin:transform code="010201"/>
 				<iobind:transform code="010201"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="010201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -949,6 +964,9 @@ zoome
 			<io>
 				<iobin:transform code="010102"/>
 				<iobind:transform code="010102"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="010102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -974,6 +992,9 @@ zoome
 				<iobin:transform code="018507"/>
 				<iobind:transform code="018507"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="018507" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -997,6 +1018,9 @@ zoome
 			<io>
 				<iobin:transform code="018506"/>
 				<iobind:transform code="018506"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="018506" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1022,6 +1046,9 @@ zoome
 				<iobin:transform code="028110"/>
 				<iobind:transform code="028110"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="028110" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1046,6 +1073,9 @@ zoome
 				<iobin:transform code="028112"/>
 				<iobind:transform code="028112"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="028112" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1065,10 +1095,13 @@ zoome
 			</io>
 		</code>
 		<code name="ALTIPUN" description="Código desconocido en la tabla ALTIPUN" priority="0" tags="" alias="" type="0" helpFile="" table="ALTIPUN" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="ALTIPUN"/>
 				<iobind:transform code="ALTIPUN"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="ALTIPUN" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1089,10 +1122,13 @@ zoome
 			</io>
 		</code>
 		<code name="ELEMLIN" description="Código desconocido en la tabla ELEMLIN" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="ELEMLIN"/>
 				<iobind:transform code="ELEMLIN"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="ELEMLIN" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1118,6 +1154,9 @@ zoome
 				<iobin:transform code="030102"/>
 				<iobind:transform code="030102"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="030102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1141,6 +1180,9 @@ zoome
 			<io>
 				<iobin:transform code="030202"/>
 				<iobind:transform code="030202"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="030202" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1166,6 +1208,9 @@ zoome
 				<iobin:transform code="030302"/>
 				<iobind:transform code="030302"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="030302" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1189,6 +1234,9 @@ zoome
 			<io>
 				<iobin:transform code="032301"/>
 				<iobind:transform code="032301"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="032301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1214,6 +1262,9 @@ zoome
 				<iobin:transform code="033301"/>
 				<iobind:transform code="033301"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="033301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1237,6 +1288,9 @@ zoome
 			<io>
 				<iobin:transform code="037101"/>
 				<iobind:transform code="037101"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="037101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1262,6 +1316,9 @@ zoome
 				<iobin:transform code="038101"/>
 				<iobind:transform code="038101"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="038101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1285,6 +1342,9 @@ zoome
 			<io>
 				<iobin:transform code="038102"/>
 				<iobind:transform code="038102"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="038102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1310,6 +1370,9 @@ zoome
 				<iobin:transform code="017107"/>
 				<iobind:transform code="017107"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="017107" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1333,6 +1396,9 @@ zoome
 			<io>
 				<iobin:transform code="060102"/>
 				<iobind:transform code="060102"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="060102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1358,6 +1424,9 @@ zoome
 				<iobin:transform code="060104"/>
 				<iobind:transform code="060104"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="060104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1381,6 +1450,9 @@ zoome
 			<io>
 				<iobin:transform code="060202"/>
 				<iobind:transform code="060202"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="060202" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1406,6 +1478,9 @@ zoome
 				<iobin:transform code="060204"/>
 				<iobind:transform code="060204"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="060204" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1425,10 +1500,13 @@ zoome
 			</io>
 		</code>
 		<code name="EJES" description="Código desconocido en la tabla EJES" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="EJES"/>
 				<iobind:transform code="EJES"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="EJES" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1454,6 +1532,9 @@ zoome
 				<iobin:transform code="CONSTRU"/>
 				<iobind:transform code="CONSTRU"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="CONSTRU" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1477,6 +1558,9 @@ zoome
 			<io>
 				<iobin:transform code="060402"/>
 				<iobind:transform code="060402"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="060402" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1502,6 +1586,9 @@ zoome
 				<iobin:transform code="060109"/>
 				<iobind:transform code="060109"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="060109" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1525,6 +1612,9 @@ zoome
 			<io>
 				<iobin:transform code="060109"/>
 				<iobind:transform code="060109"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="060109" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1550,6 +1640,9 @@ zoome
 				<iobin:transform code="061104"/>
 				<iobind:transform code="061104"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="061104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1573,6 +1666,9 @@ zoome
 			<io>
 				<iobin:transform code="067121"/>
 				<iobind:transform code="067121"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="067121" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1598,6 +1694,9 @@ zoome
 				<iobin:transform code="068401"/>
 				<iobind:transform code="068401"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="068401" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1621,6 +1720,9 @@ zoome
 			<io>
 				<iobin:transform code="108100"/>
 				<iobind:transform code="108100"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="108100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1646,6 +1748,9 @@ zoome
 				<iobin:transform code="108101"/>
 				<iobind:transform code="108101"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="108101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1669,6 +1774,9 @@ zoome
 			<io>
 				<iobin:transform code="108104"/>
 				<iobind:transform code="108104"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="108104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1694,6 +1802,9 @@ zoome
 				<iobin:transform code="111101"/>
 				<iobind:transform code="111101"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="111101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1717,6 +1828,9 @@ zoome
 			<io>
 				<iobin:transform code="111000"/>
 				<iobind:transform code="111000"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="111000" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1742,6 +1856,9 @@ zoome
 				<iobin:transform code="Límite de estudio de mercado"/>
 				<iobind:transform code="Límite de estudio de mercado"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="Límite de estudio de mercado" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1765,6 +1882,9 @@ zoome
 			<io>
 				<iobin:transform code="111300"/>
 				<iobind:transform code="111300"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="111300" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1790,6 +1910,9 @@ zoome
 				<iobin:transform code="120100"/>
 				<iobind:transform code="120100"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="120100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1813,6 +1936,9 @@ zoome
 			<io>
 				<iobin:transform code="120200"/>
 				<iobind:transform code="120200"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="120200" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1838,6 +1964,9 @@ zoome
 				<iobin:transform code="120500"/>
 				<iobind:transform code="120500"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="120500" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1861,6 +1990,9 @@ zoome
 			<io>
 				<iobin:transform code="120180"/>
 				<iobind:transform code="120180"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="120180" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1886,6 +2018,9 @@ zoome
 				<iobin:transform code="120280"/>
 				<iobind:transform code="120280"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="120280" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1909,6 +2044,9 @@ zoome
 			<io>
 				<iobin:transform code="120580"/>
 				<iobind:transform code="120580"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="120580" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1934,6 +2072,9 @@ zoome
 				<iobin:transform code="125101"/>
 				<iobind:transform code="125101"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="125101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -1957,6 +2098,9 @@ zoome
 			<io>
 				<iobin:transform code="125201"/>
 				<iobind:transform code="125201"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="125201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -1982,6 +2126,9 @@ zoome
 				<iobin:transform code="125501"/>
 				<iobind:transform code="125501"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="125501" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2005,6 +2152,9 @@ zoome
 			<io>
 				<iobin:transform code="125510"/>
 				<iobind:transform code="125510"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="125510" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2030,6 +2180,9 @@ zoome
 				<iobin:transform code="130100"/>
 				<iobind:transform code="130100"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="130100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2053,6 +2206,9 @@ zoome
 			<io>
 				<iobin:transform code="130200"/>
 				<iobind:transform code="130200"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="130200" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2078,6 +2234,9 @@ zoome
 				<iobin:transform code="130500"/>
 				<iobind:transform code="130500"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="130500" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2101,6 +2260,9 @@ zoome
 			<io>
 				<iobin:transform code="135101"/>
 				<iobind:transform code="135101"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="135101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2126,6 +2288,9 @@ zoome
 				<iobin:transform code="135201"/>
 				<iobind:transform code="135201"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="135201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2149,6 +2314,9 @@ zoome
 			<io>
 				<iobin:transform code="135501"/>
 				<iobind:transform code="135501"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="135501" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2174,6 +2342,9 @@ zoome
 				<iobin:transform code="135510"/>
 				<iobind:transform code="135510"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="135510" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2197,6 +2368,9 @@ zoome
 			<io>
 				<iobin:transform code="140100"/>
 				<iobind:transform code="140100"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="140100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2222,6 +2396,9 @@ zoome
 				<iobin:transform code="140190"/>
 				<iobind:transform code="140190"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="140190" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2245,6 +2422,9 @@ zoome
 			<io>
 				<iobin:transform code="140200"/>
 				<iobind:transform code="140200"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="140200" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2270,6 +2450,9 @@ zoome
 				<iobin:transform code="140290"/>
 				<iobind:transform code="140290"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="140290" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2293,6 +2476,9 @@ zoome
 			<io>
 				<iobin:transform code="140500"/>
 				<iobind:transform code="140500"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="140500" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2318,6 +2504,9 @@ zoome
 				<iobin:transform code="140590"/>
 				<iobind:transform code="140590"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="140590" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2341,6 +2530,9 @@ zoome
 			<io>
 				<iobin:transform code="145101"/>
 				<iobind:transform code="145101"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="145101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2366,6 +2558,9 @@ zoome
 				<iobin:transform code="145201"/>
 				<iobind:transform code="145201"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="145201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2389,6 +2584,9 @@ zoome
 			<io>
 				<iobin:transform code="145501"/>
 				<iobind:transform code="145501"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="145501" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2414,6 +2612,9 @@ zoome
 				<iobin:transform code="145510"/>
 				<iobind:transform code="145510"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="145510" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2437,6 +2638,9 @@ zoome
 			<io>
 				<iobin:transform code="160101"/>
 				<iobind:transform code="160101"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="160101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2462,6 +2666,9 @@ zoome
 				<iobin:transform code="160131"/>
 				<iobind:transform code="160131"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="160131" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2485,6 +2692,9 @@ zoome
 			<io>
 				<iobin:transform code="160132"/>
 				<iobind:transform code="160132"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="160132" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2510,6 +2720,9 @@ zoome
 				<iobin:transform code="160201"/>
 				<iobind:transform code="160201"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="160201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2533,6 +2746,9 @@ zoome
 			<io>
 				<iobin:transform code="160202"/>
 				<iobind:transform code="160202"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="160202" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2558,6 +2774,9 @@ zoome
 				<iobin:transform code="160300"/>
 				<iobind:transform code="160300"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="160300" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2581,6 +2800,9 @@ zoome
 			<io>
 				<iobin:transform code="161101"/>
 				<iobind:transform code="161101"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="161101" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2606,6 +2828,9 @@ zoome
 				<iobin:transform code="167103"/>
 				<iobind:transform code="167103"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="167103" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2629,6 +2854,9 @@ zoome
 			<io>
 				<iobin:transform code="167104"/>
 				<iobind:transform code="167104"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="167104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2654,6 +2882,9 @@ zoome
 				<iobin:transform code="167106"/>
 				<iobind:transform code="167106"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="167106" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2677,6 +2908,9 @@ zoome
 			<io>
 				<iobin:transform code="167111"/>
 				<iobind:transform code="167111"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="167111" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2702,6 +2936,9 @@ zoome
 				<iobin:transform code="167167"/>
 				<iobind:transform code="167167"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="167167" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2725,6 +2962,9 @@ zoome
 			<io>
 				<iobin:transform code="167201"/>
 				<iobind:transform code="167201"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="167201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2750,6 +2990,9 @@ zoome
 				<iobin:transform code="168100"/>
 				<iobind:transform code="168100"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="168100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2773,6 +3016,9 @@ zoome
 			<io>
 				<iobin:transform code="168103"/>
 				<iobind:transform code="168103"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="168103" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2798,6 +3044,9 @@ zoome
 				<iobin:transform code="168113"/>
 				<iobind:transform code="168113"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="168113" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2821,6 +3070,9 @@ zoome
 			<io>
 				<iobin:transform code="168116"/>
 				<iobind:transform code="168116"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="168116" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2846,6 +3098,9 @@ zoome
 				<iobin:transform code="168153"/>
 				<iobind:transform code="168153"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="168153" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2869,6 +3124,9 @@ zoome
 			<io>
 				<iobin:transform code="168168"/>
 				<iobind:transform code="168168"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="168168" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2894,6 +3152,9 @@ zoome
 				<iobin:transform code="189100"/>
 				<iobind:transform code="189100"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189100" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2917,6 +3178,9 @@ zoome
 			<io>
 				<iobin:transform code="189102"/>
 				<iobind:transform code="189102"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2942,6 +3206,9 @@ zoome
 				<iobin:transform code="189104"/>
 				<iobind:transform code="189104"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189104" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -2965,6 +3232,9 @@ zoome
 			<io>
 				<iobin:transform code="189105"/>
 				<iobind:transform code="189105"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189105" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -2990,6 +3260,9 @@ zoome
 				<iobin:transform code="189201"/>
 				<iobind:transform code="189201"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189201" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3013,6 +3286,9 @@ zoome
 			<io>
 				<iobin:transform code="189203"/>
 				<iobind:transform code="189203"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189203" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3038,6 +3314,9 @@ zoome
 				<iobin:transform code="189300"/>
 				<iobind:transform code="189300"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189300" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3061,6 +3340,9 @@ zoome
 			<io>
 				<iobin:transform code="189301"/>
 				<iobind:transform code="189301"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189301" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3086,6 +3368,9 @@ zoome
 				<iobin:transform code="189401"/>
 				<iobind:transform code="189401"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189401" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3109,6 +3394,9 @@ zoome
 			<io>
 				<iobin:transform code="189600"/>
 				<iobind:transform code="189600"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189600" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3134,6 +3422,9 @@ zoome
 				<iobin:transform code="189601"/>
 				<iobind:transform code="189601"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189601" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3157,6 +3448,9 @@ zoome
 			<io>
 				<iobin:transform code="189602"/>
 				<iobind:transform code="189602"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189602" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3182,6 +3476,9 @@ zoome
 				<iobin:transform code="189604"/>
 				<iobind:transform code="189604"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189604" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3205,6 +3502,9 @@ zoome
 			<io>
 				<iobin:transform code="189605"/>
 				<iobind:transform code="189605"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189605" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3230,6 +3530,9 @@ zoome
 				<iobin:transform code="189700"/>
 				<iobind:transform code="189700"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189700" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3253,6 +3556,9 @@ zoome
 			<io>
 				<iobin:transform code="189701"/>
 				<iobind:transform code="189701"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189701" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3278,6 +3584,9 @@ zoome
 				<iobin:transform code="189703"/>
 				<iobind:transform code="189703"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189703" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3301,6 +3610,9 @@ zoome
 			<io>
 				<iobin:transform code="189704"/>
 				<iobind:transform code="189704"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189704" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3326,6 +3638,9 @@ zoome
 				<iobin:transform code="189800"/>
 				<iobind:transform code="189800"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189800" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3349,6 +3664,9 @@ zoome
 			<io>
 				<iobin:transform code="189801"/>
 				<iobind:transform code="189801"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189801" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3374,6 +3692,9 @@ zoome
 				<iobin:transform code="189802"/>
 				<iobind:transform code="189802"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189802" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3397,6 +3718,9 @@ zoome
 			<io>
 				<iobin:transform code="189803"/>
 				<iobind:transform code="189803"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="189803" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3422,6 +3746,9 @@ zoome
 				<iobin:transform code="189804"/>
 				<iobind:transform code="189804"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="189804" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3445,6 +3772,9 @@ zoome
 			<io>
 				<iobin:transform code="ELEMPUN"/>
 				<iobind:transform code="ELEMPUN"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="ELEMPUN" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3470,6 +3800,9 @@ zoome
 				<iobin:transform code="999905"/>
 				<iobind:transform code="999905"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="999905" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3493,6 +3826,9 @@ zoome
 			<io>
 				<iobin:transform code="037102"/>
 				<iobind:transform code="037102"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="037102" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3518,6 +3854,9 @@ zoome
 				<iobin:transform code="MASA"/>
 				<iobind:transform code="MASA"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="MASA" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3541,6 +3880,9 @@ zoome
 			<io>
 				<iobin:transform code="PARCELA"/>
 				<iobind:transform code="PARCELA"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="PARCELA" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
@@ -3566,6 +3908,9 @@ zoome
 				<iobin:transform code="SUBPARCELA"/>
 				<iobind:transform code="SUBPARCELA"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="SUBPARCELA" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3590,6 +3935,9 @@ zoome
 				<iobin:transform code="HOJAS"/>
 				<iobind:transform code="HOJAS"/>
 				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iodgn:transform level="HOJAS" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
 					<iodgn:line type="LINESTRING">
@@ -3613,6 +3961,9 @@ zoome
 			<io>
 				<iobin:transform code="MAPA"/>
 				<iobind:transform code="MAPA"/>
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
+				<iocsv:transform type="0" />
 				<iocsv:transform type="0" />
 				<iodgn:transform level="MAPA" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
 					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
