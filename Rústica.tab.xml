@@ -4,7 +4,7 @@
 	<!ATTLIST xsl:stylesheet
 		id ID #REQUIRED>
 ]>
-<digitab xmlns:odt="http://schemas.digi21.net/DigiNG/DigiTab/StyleOldDigiTab/v1.0" xmlns:ccc="http://schemas.digi21.net/DigiNG/Desencadenadores/v1.0" xmlns:modeloSemantico="http://schemas.digi21.net/DigiNG/ModeloSemantico/v1.0" xmlns:iobin="http://schemas.digi21.net/DigiNG/IO/bin/v1.0" xmlns:iobind="http://schemas.digi21.net/DigiNG/IO/bind/v1.0" xmlns:iocsv="http://schemas.digi21.net/DigiNG/IO/csv/v1.0" xmlns:iodgn="http://schemas.digi21.net/DigiNG/IO/dgnv8/v1.0" xmlns:iodwg="http://schemas.digi21.net/DigiNG/IO/dwg/v1.0" xmlns:ioGeomedia="http://schemas.digi21.net/DigiNG/IO/Geomedia/v1.0" xmlns:iokml="http://schemas.digi21.net/DigiNG/IO/kml/v1.0" xmlns:ioblend="http://schemas.digi21.net/DigiNG/IO/Pdf/v1.0" xmlns:ioPostGis="http://schemas.digi21.net/DigiNG/IO/PostGis/v1.0" xmlns:ioshp="http://schemas.digi21.net/DigiNG/IO/ShapeFile/v1.0" xmlns:iosvg="http://schemas.digi21.net/DigiNG/IO/Svg/v1.0"  bgColor="255 255 255" colorUnknown="43 2 0" colorSnap="1 0 0">
+<digitab xmlns:odt="http://schemas.digi21.net/DigiNG/DigiTab/StyleOldDigiTab/v1.0" xmlns:ccc="http://schemas.digi21.net/DigiNG/Desencadenadores/v1.0" xmlns:modeloSemantico="http://schemas.digi21.net/DigiNG/ModeloSemantico/v1.0" xmlns:iobin="http://schemas.digi21.net/DigiNG/IO/bin/v1.0" xmlns:iobind="http://schemas.digi21.net/DigiNG/IO/bind/v1.0" xmlns:iocsv="http://schemas.digi21.net/DigiNG/IO/csv/v1.0" xmlns:iodgn="http://schemas.digi21.net/DigiNG/IO/dgnv8/v1.0" xmlns:iodwg="http://schemas.digi21.net/DigiNG/IO/dwg/v1.0" xmlns:ioGeomedia="http://schemas.digi21.net/DigiNG/IO/Geomedia/v1.0" xmlns:iokml="http://schemas.digi21.net/DigiNG/IO/kml/v1.0" xmlns:ioblend="http://schemas.digi21.net/DigiNG/IO/Pdf/v1.0" xmlns:ioPostGis="http://schemas.digi21.net/DigiNG/IO/PostGis/v1.0" xmlns:ioshp="http://schemas.digi21.net/DigiNG/IO/ShapeFile/v1.0" xmlns:iosvg="http://schemas.digi21.net/DigiNG/IO/Svg/v1.0"  bgColor="8 8 8" colorUnknown="43 2 0" colorSnap="1 0 0">
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 id="style1">
@@ -341,8 +341,11 @@ zoome
 		<color index="255" rgb="0 0 0"/>
 	</palette>
 	<styles>
-		<style name="" description="">
+		<style name="CONTINUO" description="">
 			<odt:representation/>
+		</style>
+		<style name="PUNTUAL_DESCONOCIDO" description="">
+			<odt:representation odt:symbol="21" odt:distance="0.000000" odt:initialDistance="0.000000" odt:symbx="1.000000" odt:symby="1.000000" odt:symbRotation="0.000000"  odt:pattern="-1.000000 "/>
 		</style>
 	</styles>
 <databaseSchema>
@@ -822,7 +825,7 @@ zoome
 	</modeloSemantico:semanticModel>
 	<codes>
 		<code name="010401" description="Límite de nación" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=010401" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="010401"/>
 				<iobind:transform code="010401"/>
@@ -845,8 +848,32 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#04aae2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4aae2" point-size="1.000000" />
 			</io>
 		</code>
+		<code name="LIMITES" description="Código desconocido en la tabla LIMITES" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="LIMITES"/>
+				<iobind:transform code="LIMITES"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="LIMITES" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="LIMITES">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="LIMITES" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="LIMITES" textHeight="1.000000" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#772a54" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#772a54" point-size="1.000000" />
+			</io>
+		</code>
 		<code name="010101" description="Límite de municipio" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=010101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="178" color-stereo="178" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="178" color-stereo="178" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="010101"/>
 				<iobind:transform code="010101"/>
@@ -870,7 +897,7 @@ zoome
 			</io>
 		</code>
 		<code name="010301" description="Límite de autonomía" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=010301" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="010301"/>
 				<iobind:transform code="010301"/>
@@ -894,7 +921,7 @@ zoome
 			</io>
 		</code>
 		<code name="010201" description="Límite de provincia" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=010201" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="010201"/>
 				<iobind:transform code="010201"/>
@@ -918,7 +945,7 @@ zoome
 			</io>
 		</code>
 		<code name="010102" description="Límite anejo o municipio agregado" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=010102" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="010102"/>
 				<iobind:transform code="010102"/>
@@ -941,8 +968,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#e2cdfe" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e2cdfe" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="018507" description="Mojón intermunicipal" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="251" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="018507" description="Mojón intermunicipal" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=018507" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="15" color-stereo="251" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="018507"/>
 				<iobind:transform code="018507"/>
@@ -961,12 +988,12 @@ zoome
 				<ioGeomedia:transform table="018507" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="018507" textHeight="1.000000" />
-				<ioshp:transform nameSHP="018507" schema="018507" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#820fc2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#82fc2" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="018506" description="Mojón tres términos" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="018506" description="Mojón tres términos" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=018506" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="018506"/>
 				<iobind:transform code="018506"/>
@@ -985,12 +1012,12 @@ zoome
 				<ioGeomedia:transform table="018506" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="018506" textHeight="1.000000" />
-				<ioshp:transform nameSHP="018506" schema="018506" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#15b726" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#15b726" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="028110" description="Señal de nivelación" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="67" color-stereo="67" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="028110" description="Señal de nivelación" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=028110" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="67" color-stereo="67" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="028110"/>
 				<iobind:transform code="028110"/>
@@ -1009,12 +1036,12 @@ zoome
 				<ioGeomedia:transform table="028110" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="028110" textHeight="1.000000" />
-				<ioshp:transform nameSHP="028110" schema="028110" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#22be1c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#22be1c" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="028112" description="Punto acotado" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="028112" description="Punto acotado" priority="0" tags="" alias="" type="0" helpFile="" table="ALTIPUN" conditions="TTGGSS=028112" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="028112"/>
 				<iobind:transform code="028112"/>
@@ -1033,12 +1060,60 @@ zoome
 				<ioGeomedia:transform table="028112" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="028112" textHeight="1.000000" />
-				<ioshp:transform nameSHP="028112" schema="028112" typeNewTable="5" />
+				<ioshp:transform nameSHP="ALTIPUN" schema="ALTIPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#3acee2" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3acee2" point-size="1.000000" />
 			</io>
 		</code>
+		<code name="ALTIPUN" description="Código desconocido en la tabla ALTIPUN" priority="0" tags="" alias="" type="0" helpFile="" table="ALTIPUN" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="ALTIPUN"/>
+				<iobind:transform code="ALTIPUN"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="ALTIPUN" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="ALTIPUN">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="ALTIPUN" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="ALTIPUN" textHeight="1.000000" />
+				<ioshp:transform nameSHP="ALTIPUN" schema="ALTIPUN" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#be3469" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#be3469" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="ELEMLIN" description="Código desconocido en la tabla ELEMLIN" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="ELEMLIN"/>
+				<iobind:transform code="ELEMLIN"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="ELEMLIN" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="ELEMLIN">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="ELEMLIN" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="ELEMLIN" textHeight="1.000000" />
+				<ioshp:transform nameSHP="ELEMLIN" schema="ELEMLIN" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#06d134" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#6d134" point-size="1.000000" />
+			</io>
+		</code>
 		<code name="030102" description="Curso fluvial" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=030102" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="030102"/>
 				<iobind:transform code="030102"/>
@@ -1062,7 +1137,7 @@ zoome
 			</io>
 		</code>
 		<code name="030202" description="Curso fluvial (a trazos)" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=030202" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="3" color-stereo="3" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="3" color-stereo="3" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="030202"/>
 				<iobind:transform code="030202"/>
@@ -1086,7 +1161,7 @@ zoome
 			</io>
 		</code>
 		<code name="030302" description="Margen de acequia/canal" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=030302" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="81" color-stereo="81" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="81" color-stereo="81" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="030302"/>
 				<iobind:transform code="030302"/>
@@ -1110,7 +1185,7 @@ zoome
 			</io>
 		</code>
 		<code name="032301" description="Línea de costa" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=032301" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="032301"/>
 				<iobind:transform code="032301"/>
@@ -1134,7 +1209,7 @@ zoome
 			</io>
 		</code>
 		<code name="033301" description="Contorno de lago/laguna" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=033301" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="32" color-stereo="32" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="32" color-stereo="32" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="033301"/>
 				<iobind:transform code="033301"/>
@@ -1158,7 +1233,7 @@ zoome
 			</io>
 		</code>
 		<code name="037101" description="Pozo (perímetro)" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=037101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="186" color-stereo="186" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="186" color-stereo="186" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="037101"/>
 				<iobind:transform code="037101"/>
@@ -1181,8 +1256,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#ff4cdf" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#ff4cdf" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="038101" description="Pozo (puntual)" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="186" color-stereo="186" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="038101" description="Pozo (puntual)" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=038101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="186" color-stereo="186" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="038101"/>
 				<iobind:transform code="038101"/>
@@ -1201,12 +1276,12 @@ zoome
 				<ioGeomedia:transform table="038101" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="038101" textHeight="1.000000" />
-				<ioshp:transform nameSHP="038101" schema="038101" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#38630c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3863c" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="038102" description="Fuente/Estanque/Balsa/Depósito (puntual)" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="038102" description="Fuente/Estanque/Balsa/Depósito (puntual)" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=038102" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="038102"/>
 				<iobind:transform code="038102"/>
@@ -1225,12 +1300,12 @@ zoome
 				<ioGeomedia:transform table="038102" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="038102" textHeight="1.000000" />
-				<ioshp:transform nameSHP="038102" schema="038102" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#ffccc8" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#ffccc8" point-size="1.000000" />
 			</io>
 		</code>
 		<code name="017107" description="Dique de embalse o presa (perímetro)" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=017107" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="017107"/>
 				<iobind:transform code="017107"/>
@@ -1254,7 +1329,7 @@ zoome
 			</io>
 		</code>
 		<code name="060102" description="Margen de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=060102" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060102"/>
 				<iobind:transform code="060102"/>
@@ -1278,7 +1353,7 @@ zoome
 			</io>
 		</code>
 		<code name="060104" description="Eje de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=060104" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060104"/>
 				<iobind:transform code="060104"/>
@@ -1302,7 +1377,7 @@ zoome
 			</io>
 		</code>
 		<code name="060202" description="Margen de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=060202" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="39" color-stereo="39" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="39" color-stereo="39" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060202"/>
 				<iobind:transform code="060202"/>
@@ -1326,7 +1401,7 @@ zoome
 			</io>
 		</code>
 		<code name="060204" description="Eje de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=060204" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="42" color-stereo="42" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="42" color-stereo="42" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060204"/>
 				<iobind:transform code="060204"/>
@@ -1349,8 +1424,32 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#1c8a13" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#1c8a13" point-size="1.000000" />
 			</io>
 		</code>
+		<code name="EJES" description="Código desconocido en la tabla EJES" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="EJES"/>
+				<iobind:transform code="EJES"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="EJES" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="EJES">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="EJES" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="EJES" textHeight="1.000000" />
+				<ioshp:transform nameSHP="EJES" schema="EJES" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#edd7c9" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#edd7c9" point-size="1.000000" />
+			</io>
+		</code>
 		<code name="CONSTRU" description="" priority="0" tags="" alias="" type="1" helpFile="" table="CONSTRU" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="4" color-stereo="4" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="4" color-stereo="4" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="CONSTRU"/>
 				<iobind:transform code="CONSTRU"/>
@@ -1374,7 +1473,7 @@ zoome
 			</io>
 		</code>
 		<code name="060402" description="Margen de camino, vía pecuaria" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=060402" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="43" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="43" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060402"/>
 				<iobind:transform code="060402"/>
@@ -1398,7 +1497,7 @@ zoome
 			</io>
 		</code>
 		<code name="060404" description="Eje de camino, vía pecuaria" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=060404" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="42" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="42" color-stereo="43" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060109"/>
 				<iobind:transform code="060109"/>
@@ -1422,7 +1521,7 @@ zoome
 			</io>
 		</code>
 		<code name="060109" description="Teleférico/funicular" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=060109" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="61" color-stereo="61" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="61" color-stereo="61" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="060109"/>
 				<iobind:transform code="060109"/>
@@ -1446,7 +1545,7 @@ zoome
 			</io>
 		</code>
 		<code name="061104" description="FF.CC" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=061104" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="30" color-stereo="30" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="30" color-stereo="30" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="061104"/>
 				<iobind:transform code="061104"/>
@@ -1470,7 +1569,7 @@ zoome
 			</io>
 		</code>
 		<code name="067121" description="Perímetro de puente/alcantarilla" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=067121" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="172" color-stereo="172" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="172" color-stereo="172" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="067121"/>
 				<iobind:transform code="067121"/>
@@ -1493,8 +1592,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#8b5819" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8b5819" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="068401" description="Hito kilométrico autopistas/carreteras" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="138" color-stereo="138" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="068401" description="Hito kilométrico autopistas/carreteras" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=068401" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="138" color-stereo="138" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="068401"/>
 				<iobind:transform code="068401"/>
@@ -1513,12 +1612,12 @@ zoome
 				<ioGeomedia:transform table="068401" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="068401" textHeight="1.000000" />
-				<ioshp:transform nameSHP="068401" schema="068401" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#ef1b46" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#ef1b46" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="108100" description="Vértice geodésico sin especificar" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="167" color-stereo="167" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="108100" description="Vértice geodésico sin especificar" priority="0" tags="" alias="" type="0" helpFile="" table="ALTIPUN" conditions="TTGGSS=108100" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="167" color-stereo="167" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="108100"/>
 				<iobind:transform code="108100"/>
@@ -1537,12 +1636,12 @@ zoome
 				<ioGeomedia:transform table="108100" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="108100" textHeight="1.000000" />
-				<ioshp:transform nameSHP="108100" schema="108100" typeNewTable="5" />
+				<ioshp:transform nameSHP="ALTIPUN" schema="ALTIPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#03439f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3439f" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="108101" description="Vértice geodésico (primer orden)" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="94" color-stereo="94" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="108101" description="Vértice geodésico (primer orden)" priority="0" tags="" alias="" type="0" helpFile="" table="ALTIPUN" conditions="TTGGSS=108101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="94" color-stereo="94" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="108101"/>
 				<iobind:transform code="108101"/>
@@ -1561,12 +1660,12 @@ zoome
 				<ioGeomedia:transform table="108101" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="108101" textHeight="1.000000" />
-				<ioshp:transform nameSHP="108101" schema="108101" typeNewTable="5" />
+				<ioshp:transform nameSHP="ALTIPUN" schema="ALTIPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#63a89b" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#63a89b" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="108104" description="Vértice topográfico de Red Local Catastral. Punto de poligonal" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="213" color-stereo="213" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="108104" description="Vértice topográfico de Red Local Catastral. Punto de poligonal" priority="0" tags="" alias="" type="0" helpFile="" table="ALTIPUN" conditions="TTGGSS=108104" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="213" color-stereo="213" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="108104"/>
 				<iobind:transform code="108104"/>
@@ -1585,12 +1684,12 @@ zoome
 				<ioGeomedia:transform table="108104" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="108104" textHeight="1.000000" />
-				<ioshp:transform nameSHP="108104" schema="108104" typeNewTable="5" />
+				<ioshp:transform nameSHP="ALTIPUN" schema="ALTIPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#4b5c68" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#4b5c68" point-size="1.000000" />
 			</io>
 		</code>
 		<code name="111101" description="Límite suelo narutaleza urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=111101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="2" color-stereo="2" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="2" color-stereo="2" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="111101"/>
 				<iobind:transform code="111101"/>
@@ -1614,7 +1713,7 @@ zoome
 			</io>
 		</code>
 		<code name="111000" description="Límite de polígono de valoración" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=111000" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="14" color-stereo="14" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="14" color-stereo="14" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="111000"/>
 				<iobind:transform code="111000"/>
@@ -1638,7 +1737,7 @@ zoome
 			</io>
 		</code>
 		<code name="111200" description="Límite de estudio de mercado" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=111200" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="52" color-stereo="52" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="52" color-stereo="52" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="Límite de estudio de mercado"/>
 				<iobind:transform code="Límite de estudio de mercado"/>
@@ -1662,7 +1761,7 @@ zoome
 			</io>
 		</code>
 		<code name="111300" description="Delimitación urbanística genérica" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=111300" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="111300"/>
 				<iobind:transform code="111300"/>
@@ -1685,8 +1784,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#3ebc24" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3ebc24" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="120100" description="Límite de polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="106" color-stereo="106" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="120100" description="Límite de polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=120100" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="106" color-stereo="106" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="120100"/>
 				<iobind:transform code="120100"/>
@@ -1705,12 +1804,12 @@ zoome
 				<ioGeomedia:transform table="120100" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="120100" textHeight="1.000000" />
-				<ioshp:transform nameSHP="120100" schema="120100" typeNewTable="5" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#88605a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#88605a" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="120200" description="Límite de parcela/descuento rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="120200" description="Límite de parcela/descuento rústico" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=120200" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="120200"/>
 				<iobind:transform code="120200"/>
@@ -1729,12 +1828,12 @@ zoome
 				<ioGeomedia:transform table="120200" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="120200" textHeight="1.000000" />
-				<ioshp:transform nameSHP="120200" schema="120200" typeNewTable="5" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#6f368b" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#6f368b" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="120500" description="Límite de subparcela rústica" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="120500" description="Límite de subparcela rústica" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMPUN" conditions="TTGGSS=120500" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="9" color-stereo="9" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="120500"/>
 				<iobind:transform code="120500"/>
@@ -1753,12 +1852,12 @@ zoome
 				<ioGeomedia:transform table="120500" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="120500" textHeight="1.000000" />
-				<ioshp:transform nameSHP="120500" schema="120500" typeNewTable="5" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#7ef112" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#7ef112" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="120180" description="Límite de polígono rústico con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="128" color-stereo="128" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="120180" description="Límite de polígono rústico con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSDS=120180" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="128" color-stereo="128" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="120180"/>
 				<iobind:transform code="120180"/>
@@ -1777,12 +1876,12 @@ zoome
 				<ioGeomedia:transform table="120180" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="120180" textHeight="1.000000" />
-				<ioshp:transform nameSHP="120180" schema="120180" typeNewTable="5" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#75286f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#75286f" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="120280" description="Límite de parcela/descuento rústico con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="65" color-stereo="65" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="120280" description="Límite de parcela/descuento rústico con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=120280" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="65" color-stereo="65" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="120280"/>
 				<iobind:transform code="120280"/>
@@ -1801,12 +1900,12 @@ zoome
 				<ioGeomedia:transform table="120280" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="120280" textHeight="1.000000" />
-				<ioshp:transform nameSHP="120280" schema="120280" typeNewTable="5" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#f5c6fa" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f5c6fa" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="120580" description="Límite de subparcela rústica con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="117" color-stereo="117" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="120580" description="Límite de subparcela rústica con diseminado" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=120580" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="117" color-stereo="117" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="120580"/>
 				<iobind:transform code="120580"/>
@@ -1825,12 +1924,12 @@ zoome
 				<ioGeomedia:transform table="120580" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="120580" textHeight="1.000000" />
-				<ioshp:transform nameSHP="120580" schema="120580" typeNewTable="5" />
+				<ioshp:transform nameSHP="LIMITES" schema="LIMITES" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#cd4d4e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#cd4d4e" point-size="1.000000" />
 			</io>
 		</code>
 		<code name="125101" description="Centroide de polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="185" color-stereo="185" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="185" color-stereo="185" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="125101"/>
 				<iobind:transform code="125101"/>
@@ -1854,7 +1953,7 @@ zoome
 			</io>
 		</code>
 		<code name="125201" description="Centroide de parcela/descuento rústicos" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="52" color-stereo="52" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="52" color-stereo="52" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="125201"/>
 				<iobind:transform code="125201"/>
@@ -1878,7 +1977,7 @@ zoome
 			</io>
 		</code>
 		<code name="125501" description="Centroide subparcela rústica (cultivo improductivo)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="77" color-stereo="77" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="77" color-stereo="77" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="125501"/>
 				<iobind:transform code="125501"/>
@@ -1902,7 +2001,7 @@ zoome
 			</io>
 		</code>
 		<code name="125510" description="Centroide de subparcela rústica (construcción)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="133" color-stereo="133" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="133" color-stereo="133" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="125510"/>
 				<iobind:transform code="125510"/>
@@ -1926,7 +2025,7 @@ zoome
 			</io>
 		</code>
 		<code name="130100" description="Límite de manzana urbana o polígono rústico" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=130100" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="139" color-stereo="139" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="139" color-stereo="139" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="130100"/>
 				<iobind:transform code="130100"/>
@@ -1950,7 +2049,7 @@ zoome
 			</io>
 		</code>
 		<code name="130200" description="Límite de parcela rústica o urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=130200" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="164" color-stereo="164" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="164" color-stereo="164" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="130200"/>
 				<iobind:transform code="130200"/>
@@ -1974,7 +2073,7 @@ zoome
 			</io>
 		</code>
 		<code name="130500" description="Límite de subparcela de cultivo o construcción" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=130500" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="182" color-stereo="182" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="182" color-stereo="182" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="130500"/>
 				<iobind:transform code="130500"/>
@@ -1998,7 +2097,7 @@ zoome
 			</io>
 		</code>
 		<code name="135101" description="Centroide de manzana o polígono" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="217" color-stereo="217" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="217" color-stereo="217" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="135101"/>
 				<iobind:transform code="135101"/>
@@ -2022,7 +2121,7 @@ zoome
 			</io>
 		</code>
 		<code name="135201" description="Centroide de parcela rústica o urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="113" color-stereo="113" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="113" color-stereo="113" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="135201"/>
 				<iobind:transform code="135201"/>
@@ -2046,7 +2145,7 @@ zoome
 			</io>
 		</code>
 		<code name="135501" description="Centroide de subparcela (cultivo/improductivo)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="115" color-stereo="115" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="115" color-stereo="115" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="135501"/>
 				<iobind:transform code="135501"/>
@@ -2070,7 +2169,7 @@ zoome
 			</io>
 		</code>
 		<code name="135510" description="Centroide de subparcela (construcción)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="101" color-stereo="101" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="101" color-stereo="101" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="135510"/>
 				<iobind:transform code="135510"/>
@@ -2094,7 +2193,7 @@ zoome
 			</io>
 		</code>
 		<code name="140100" description="Límite de manzana urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=140100" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="140100"/>
 				<iobind:transform code="140100"/>
@@ -2118,7 +2217,7 @@ zoome
 			</io>
 		</code>
 		<code name="140190" description="Límite de manzana urbana bajo rasante" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=140190" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="129" color-stereo="129" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="129" color-stereo="129" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="140190"/>
 				<iobind:transform code="140190"/>
@@ -2142,7 +2241,7 @@ zoome
 			</io>
 		</code>
 		<code name="140200" description="Límite de parcela urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=140200" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="10" color-stereo="10" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="10" color-stereo="10" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="140200"/>
 				<iobind:transform code="140200"/>
@@ -2166,7 +2265,7 @@ zoome
 			</io>
 		</code>
 		<code name="140290" description="Límite de parcela urbana bajo rasante" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=140290" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="159" color-stereo="159" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="159" color-stereo="159" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="140290"/>
 				<iobind:transform code="140290"/>
@@ -2190,7 +2289,7 @@ zoome
 			</io>
 		</code>
 		<code name="140500" description="Límite de subparcela urbana" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=140500" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="152" color-stereo="152" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="152" color-stereo="152" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="140500"/>
 				<iobind:transform code="140500"/>
@@ -2214,7 +2313,7 @@ zoome
 			</io>
 		</code>
 		<code name="140590" description="Límite de subparcela urbana bajo rasante" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=140590" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="180" color-stereo="180" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="180" color-stereo="180" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="140590"/>
 				<iobind:transform code="140590"/>
@@ -2238,7 +2337,7 @@ zoome
 			</io>
 		</code>
 		<code name="145101" description="Centroide de manzana urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="133" color-stereo="133" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="133" color-stereo="133" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="145101"/>
 				<iobind:transform code="145101"/>
@@ -2262,7 +2361,7 @@ zoome
 			</io>
 		</code>
 		<code name="145201" description="Centroide de parcela urbana" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="145201"/>
 				<iobind:transform code="145201"/>
@@ -2286,7 +2385,7 @@ zoome
 			</io>
 		</code>
 		<code name="145501" description="Centroide de subparcela urbana (construcción/solar)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="212" color-stereo="212" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="212" color-stereo="212" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="145501"/>
 				<iobind:transform code="145501"/>
@@ -2310,7 +2409,7 @@ zoome
 			</io>
 		</code>
 		<code name="145510" description="Centroide de subparcela urbana (cultivo/improductivo)" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="222" color-stereo="222" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="222" color-stereo="222" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="145510"/>
 				<iobind:transform code="145510"/>
@@ -2334,7 +2433,7 @@ zoome
 			</io>
 		</code>
 		<code name="160101" description="Línea de acera" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=160101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="221" color-stereo="221" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="160101"/>
 				<iobind:transform code="160101"/>
@@ -2358,7 +2457,7 @@ zoome
 			</io>
 		</code>
 		<code name="160131" description="Línea indeterminada (continua)" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=160131" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="239" color-stereo="239" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="239" color-stereo="239" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="160131"/>
 				<iobind:transform code="160131"/>
@@ -2382,7 +2481,7 @@ zoome
 			</io>
 		</code>
 		<code name="160132" description="Línea indeterminada (a trazos)" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=160132" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="80" color-stereo="80" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="80" color-stereo="80" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="160132"/>
 				<iobind:transform code="160132"/>
@@ -2406,7 +2505,7 @@ zoome
 			</io>
 		</code>
 		<code name="160201" description="Línea eléctrica" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=160201" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="238" color-stereo="238" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="238" color-stereo="238" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="160201"/>
 				<iobind:transform code="160201"/>
@@ -2430,7 +2529,7 @@ zoome
 			</io>
 		</code>
 		<code name="160202" description="Línea telefónica/telegráfica" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=160202" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="87" color-stereo="87" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="87" color-stereo="87" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="160202"/>
 				<iobind:transform code="160202"/>
@@ -2454,7 +2553,7 @@ zoome
 			</io>
 		</code>
 		<code name="160300" description="Línea de parcelario aparente" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=160300" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="81" color-stereo="81" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="81" color-stereo="81" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="160300"/>
 				<iobind:transform code="160300"/>
@@ -2478,7 +2577,7 @@ zoome
 			</io>
 		</code>
 		<code name="161101" description="Eje de red viaria" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="TTGGSS=161101" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="28" color-stereo="28" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="161101"/>
 				<iobind:transform code="161101"/>
@@ -2502,7 +2601,7 @@ zoome
 			</io>
 		</code>
 		<code name="167103" description="Monumento" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=167103" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="167103"/>
 				<iobind:transform code="167103"/>
@@ -2526,7 +2625,7 @@ zoome
 			</io>
 		</code>
 		<code name="167104" description="Escalera" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=167104" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="44" color-stereo="44" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="44" color-stereo="44" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="167104"/>
 				<iobind:transform code="167104"/>
@@ -2550,7 +2649,7 @@ zoome
 			</io>
 		</code>
 		<code name="167106" description="Acceso a paso subterráneo" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=167106" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="167106"/>
 				<iobind:transform code="167106"/>
@@ -2574,7 +2673,7 @@ zoome
 			</io>
 		</code>
 		<code name="167111" description="Transformador de red eléctrica" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=167111" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="104" color-stereo="104" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="167111"/>
 				<iobind:transform code="167111"/>
@@ -2598,7 +2697,7 @@ zoome
 			</io>
 		</code>
 		<code name="167167" description="Cabina/kiosco indeterminado" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=167167" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="32" color-stereo="32" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="32" color-stereo="32" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="167167"/>
 				<iobind:transform code="167167"/>
@@ -2622,7 +2721,7 @@ zoome
 			</io>
 		</code>
 		<code name="167201" description="Línea/perímetro de zona verde, deportiva, industrial, militar, portuaria, etc." priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=167201" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="122" color-stereo="122" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="122" color-stereo="122" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="167201"/>
 				<iobind:transform code="167201"/>
@@ -2645,8 +2744,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#087e76" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#87e76" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="168100" description="Elemento de infraestructura/mobiliario genérico" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="83" color-stereo="83" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="168100" description="Elemento de infraestructura/mobiliario genérico" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=168100" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="83" color-stereo="83" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="168100"/>
 				<iobind:transform code="168100"/>
@@ -2665,12 +2764,12 @@ zoome
 				<ioGeomedia:transform table="168100" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="168100" textHeight="1.000000" />
-				<ioshp:transform nameSHP="168100" schema="168100" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#290785" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#29785" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="168103" description="Monumento" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="22" color-stereo="22" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="168103" description="Monumento" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=168103" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="22" color-stereo="22" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="168103"/>
 				<iobind:transform code="168103"/>
@@ -2689,12 +2788,12 @@ zoome
 				<ioGeomedia:transform table="168103" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="168103" textHeight="1.000000" />
-				<ioshp:transform nameSHP="168103" schema="168103" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#6f93ea" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#6f93ea" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="168113" description="Torre/Poste de conducción" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="56" color-stereo="56" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="168113" description="Torre/Poste de conducción" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=168113" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="56" color-stereo="56" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="168113"/>
 				<iobind:transform code="168113"/>
@@ -2713,12 +2812,12 @@ zoome
 				<ioGeomedia:transform table="168113" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="168113" textHeight="1.000000" />
-				<ioshp:transform nameSHP="168113" schema="168113" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#0dcf6e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#dcf6e" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="168116" description="Farola" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="107" color-stereo="107" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="168116" description="Farola" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=168116" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="107" color-stereo="107" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="168116"/>
 				<iobind:transform code="168116"/>
@@ -2737,12 +2836,12 @@ zoome
 				<ioGeomedia:transform table="168116" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="168116" textHeight="1.000000" />
-				<ioshp:transform nameSHP="168116" schema="168116" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#f4244a" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f4244a" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="168153" description="Árbol" priority="0" tags="" alias="" type="0" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="21" color-stereo="21" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="168153" description="Árbol" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="TTGGSS=168153" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="21" color-stereo="21" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="168153"/>
 				<iobind:transform code="168153"/>
@@ -2761,12 +2860,12 @@ zoome
 				<ioGeomedia:transform table="168153" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="168153" textHeight="1.000000" />
-				<ioshp:transform nameSHP="168153" schema="168153" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="1" />
 				<iosvg:transform stroke-width="1.000000" stroke="#d3758e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#d3758e" point-size="1.000000" />
 			</io>
 		</code>
 		<code name="168168" description="Acceso a garajes/aparcamiento público" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=168168" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="134" color-stereo="134" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="134" color-stereo="134" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="168168"/>
 				<iobind:transform code="168168"/>
@@ -2789,8 +2888,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#8fcead" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8fcead" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189100" description="Otros textos de DIVISIONES ADMINISTRATIVAS" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="92" color-stereo="92" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189100" description="Otros textos de DIVISIONES ADMINISTRATIVAS" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189100" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="92" color-stereo="92" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189100"/>
 				<iobind:transform code="189100"/>
@@ -2809,12 +2908,12 @@ zoome
 				<ioGeomedia:transform table="189100" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189100" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189100" schema="189100" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#0f5698" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#f5698" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189102" description="Texto de nación, comunidad autónoma, privincia y término municipal" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="164" color-stereo="164" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189102" description="Texto de nación, comunidad autónoma, privincia y término municipal" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189102" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="164" color-stereo="164" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189102"/>
 				<iobind:transform code="189102"/>
@@ -2833,12 +2932,12 @@ zoome
 				<ioGeomedia:transform table="189102" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189102" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189102" schema="189102" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#c8f366" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#c8f366" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189104" description="Texto de distrito" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="230" color-stereo="230" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189104" description="Texto de distrito" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189104" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="230" color-stereo="230" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189104"/>
 				<iobind:transform code="189104"/>
@@ -2857,12 +2956,12 @@ zoome
 				<ioGeomedia:transform table="189104" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189104" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189104" schema="189104" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#e51240" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e51240" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189105" description="Texto de barrio" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="157" color-stereo="157" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189105" description="Texto de barrio" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189105" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="157" color-stereo="157" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189105"/>
 				<iobind:transform code="189105"/>
@@ -2881,12 +2980,12 @@ zoome
 				<ioGeomedia:transform table="189105" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189105" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189105" schema="189105" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#70d24c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#70d24c" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189201" description="Texto de urbanizaciones" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="60" color-stereo="60" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189201" description="Texto de urbanizaciones" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189201" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="60" color-stereo="60" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189201"/>
 				<iobind:transform code="189201"/>
@@ -2905,12 +3004,12 @@ zoome
 				<ioGeomedia:transform table="189201" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189201" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189201" schema="189201" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#87ba39" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#87ba39" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189203" description="Texto de parajes y comarcas" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="240" color-stereo="240" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189203" description="Texto de parajes y comarcas" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189203" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="240" color-stereo="240" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189203"/>
 				<iobind:transform code="189203"/>
@@ -2929,12 +3028,12 @@ zoome
 				<ioGeomedia:transform table="189203" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189203" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189203" schema="189203" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#10febe" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#10febe" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189300" description="Otros textos de INFORMACIÓN URBANA o RÚSTICA" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="212" color-stereo="212" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189300" description="Otros textos de INFORMACIÓN URBANA o RÚSTICA" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189300" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="212" color-stereo="212" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189300"/>
 				<iobind:transform code="189300"/>
@@ -2953,12 +3052,12 @@ zoome
 				<ioGeomedia:transform table="189300" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189300" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189300" schema="189300" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#99f641" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#99f641" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189301" description="Texto de vías públicas" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="23" color-stereo="23" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189301" description="Texto de vías públicas" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189301" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="23" color-stereo="23" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189301"/>
 				<iobind:transform code="189301"/>
@@ -2977,12 +3076,12 @@ zoome
 				<ioGeomedia:transform table="189301" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189301" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189301" schema="189301" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#fd84c9" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#fd84c9" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189401" description="Texto de número de policía parcela" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="74" color-stereo="74" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189401" description="Texto de número de policía parcela" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189401" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="74" color-stereo="74" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189401"/>
 				<iobind:transform code="189401"/>
@@ -3001,12 +3100,12 @@ zoome
 				<ioGeomedia:transform table="189401" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189401" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189401" schema="189401" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#d0c26c" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#d0c26c" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189600" description="Otros textos de HIDROGRAFÍA" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="45" color-stereo="45" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189600" description="Otros textos de HIDROGRAFÍA" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189600" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="45" color-stereo="45" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189600"/>
 				<iobind:transform code="189600"/>
@@ -3025,12 +3124,12 @@ zoome
 				<ioGeomedia:transform table="189600" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189600" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189600" schema="189600" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#501ef9" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#501ef9" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189601" description="Texto de mar" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="3" color-stereo="3" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189601" description="Texto de mar" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189601" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="3" color-stereo="3" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189601"/>
 				<iobind:transform code="189601"/>
@@ -3049,12 +3148,12 @@ zoome
 				<ioGeomedia:transform table="189601" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189601" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189601" schema="189601" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#639626" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#639626" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189602" description="Texto de río" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189602" description="Texto de río" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189602" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="15" color-stereo="15" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189602"/>
 				<iobind:transform code="189602"/>
@@ -3073,12 +3172,12 @@ zoome
 				<ioGeomedia:transform table="189602" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189602" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189602" schema="189602" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#363ec8" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#363ec8" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189604" description="Texto de embalse, lago, pantano" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="182" color-stereo="182" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189604" description="Texto de embalse, lago, pantano" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189604" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="182" color-stereo="182" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189604"/>
 				<iobind:transform code="189604"/>
@@ -3097,12 +3196,12 @@ zoome
 				<ioGeomedia:transform table="189604" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189604" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189604" schema="189604" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#3215aa" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3215aa" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189605" description="Texto de canal" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="120" color-stereo="120" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189605" description="Texto de canal" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189605" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="120" color-stereo="120" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189605"/>
 				<iobind:transform code="189605"/>
@@ -3121,12 +3220,12 @@ zoome
 				<ioGeomedia:transform table="189605" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189605" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189605" schema="189605" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#50dfa3" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#50dfa3" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189700" description="Otros textos de VEGETACIÓN Y ACCIDENTES GEOGRAFICOS" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189700" description="Otros textos de VEGETACIÓN Y ACCIDENTES GEOGRAFICOS" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189700" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189700"/>
 				<iobind:transform code="189700"/>
@@ -3145,12 +3244,12 @@ zoome
 				<ioGeomedia:transform table="189700" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189700" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189700" schema="189700" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#a59bde" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#a59bde" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189701" description="Texto de accidente geográfico" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189701" description="Texto de accidente geográfico" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189701" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="205" color-stereo="205" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189701"/>
 				<iobind:transform code="189701"/>
@@ -3169,12 +3268,12 @@ zoome
 				<ioGeomedia:transform table="189701" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189701" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189701" schema="189701" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#1e58f0" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#1e58f0" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189703" description="Texto de cota de curva de nivel" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="168" color-stereo="168" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189703" description="Texto de cota de curva de nivel" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189703" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="168" color-stereo="168" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189703"/>
 				<iobind:transform code="189703"/>
@@ -3193,12 +3292,12 @@ zoome
 				<ioGeomedia:transform table="189703" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189703" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189703" schema="189703" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#b938d3" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#b938d3" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189704" description="Texto de vegetación/cultivo" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="149" color-stereo="149" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189704" description="Texto de vegetación/cultivo" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189704" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="149" color-stereo="149" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189704"/>
 				<iobind:transform code="189704"/>
@@ -3217,12 +3316,12 @@ zoome
 				<ioGeomedia:transform table="189704" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189704" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189704" schema="189704" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#a8aaae" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#a8aaae" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189800" description="Otros textos de VIAS DE COMUNICACIÓN" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="25" color-stereo="25" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189800" description="Otros textos de VIAS DE COMUNICACIÓN" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189800" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="25" color-stereo="25" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189800"/>
 				<iobind:transform code="189800"/>
@@ -3241,12 +3340,12 @@ zoome
 				<ioGeomedia:transform table="189800" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189800" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189800" schema="189800" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#af045e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#af45e" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189801" description="Texto de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="207" color-stereo="207" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189801" description="Texto de autopista/autovía" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189801" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="207" color-stereo="207" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189801"/>
 				<iobind:transform code="189801"/>
@@ -3265,12 +3364,12 @@ zoome
 				<ioGeomedia:transform table="189801" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189801" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189801" schema="189801" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#e4f97e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#e4f97e" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189802" description="Texto de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="189" color-stereo="189" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189802" description="Texto de carretera" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189802" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="189" color-stereo="189" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189802"/>
 				<iobind:transform code="189802"/>
@@ -3289,12 +3388,12 @@ zoome
 				<ioGeomedia:transform table="189802" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189802" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189802" schema="189802" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#58cb7d" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#58cb7d" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189803" description="Texto de camino" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="161" color-stereo="161" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189803" description="Texto de camino" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189803" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="161" color-stereo="161" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189803"/>
 				<iobind:transform code="189803"/>
@@ -3313,12 +3412,12 @@ zoome
 				<ioGeomedia:transform table="189803" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189803" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189803" schema="189803" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#8c342f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#8c342f" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="189804" description="Texto de ferrocarril" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="249" color-stereo="249" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="189804" description="Texto de ferrocarril" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMTEX" conditions="TTGGSS=189804" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="249" color-stereo="249" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="189804"/>
 				<iobind:transform code="189804"/>
@@ -3337,12 +3436,36 @@ zoome
 				<ioGeomedia:transform table="189804" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="189804" textHeight="1.000000" />
-				<ioshp:transform nameSHP="189804" schema="189804" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMTEX" schema="ELEMTEX" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#fb7f8e" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#fb7f8e" point-size="1.000000" />
 			</io>
 		</code>
+		<code name="ELEMPUN" description="Código desconocido en la tabla ELEMPUN" priority="0" tags="" alias="" type="0" helpFile="" table="ELEMPUN" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="PUNTUAL_DESCONOCIDO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="23" print-width="1.000000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="ELEMPUN"/>
+				<iobind:transform code="ELEMPUN"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="ELEMPUN" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="ELEMPUN">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="ELEMPUN" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="ELEMPUN" textHeight="1.000000" />
+				<ioshp:transform nameSHP="ELEMPUN" schema="ELEMPUN" typeNewTable="5" />
+				<iosvg:transform stroke-width="1.000000" stroke="#3d2e15" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#3d2e15" point-size="1.000000" />
+			</io>
+		</code>
 		<code name="999905" description="Límite de actualización cartográfica" priority="0" tags="" alias="" type="1" helpFile="" table="LIMITES" conditions="TTGGSS=999905" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="26" color-stereo="26" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="26" color-stereo="26" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="999905"/>
 				<iobind:transform code="999905"/>
@@ -3366,7 +3489,7 @@ zoome
 			</io>
 		</code>
 		<code name="037102" description="Fuente/Estanque/Balsa/Depósito (perímetro)" priority="0" tags="" alias="" type="1" helpFile="" table="ELEMLIN" conditions="TTGGSS=037102" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="11" color-stereo="11" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="037102"/>
 				<iobind:transform code="037102"/>
@@ -3390,7 +3513,7 @@ zoome
 			</io>
 		</code>
 		<code name="MASA" description="" priority="0" tags="" alias="" type="1" helpFile="" table="MASA" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="73" color-stereo="73" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="73" color-stereo="73" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="MASA"/>
 				<iobind:transform code="MASA"/>
@@ -3414,7 +3537,7 @@ zoome
 			</io>
 		</code>
 		<code name="PARCELA" description="" priority="0" tags="" alias="" type="1" helpFile="" table="PARCELA" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="12" color-stereo="12" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="PARCELA"/>
 				<iobind:transform code="PARCELA"/>
@@ -3437,8 +3560,8 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#42f675" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#42f675" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="SUBPARCELA" description="" priority="0" tags="" alias="" type="1" helpFile="" table="SUBPARCE" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="13" color-stereo="13" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+		<code name="SUBPARCE" description="" priority="0" tags="" alias="" type="1" helpFile="" table="SUBPARCE" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="13" color-stereo="13" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="SUBPARCELA"/>
 				<iobind:transform code="SUBPARCELA"/>
@@ -3462,7 +3585,7 @@ zoome
 			</io>
 		</code>
 		<code name="HOJAS" description="" priority="0" tags="" alias="" type="1" helpFile="" table="HOJAS" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="7" color-stereo="7" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="7" color-stereo="7" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="HOJAS"/>
 				<iobind:transform code="HOJAS"/>
@@ -3486,7 +3609,7 @@ zoome
 			</io>
 		</code>
 		<code name="MAPA" description="" priority="0" tags="" alias="" type="1" helpFile="" table="MAPA" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
-			<representation style="" color="79" color-stereo="79" width="1" width-stereo="1" print-color="0" print-width="0.010000" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<representation style="CONTINUO" color="79" color-stereo="79" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="MAPA"/>
 				<iobind:transform code="MAPA"/>
