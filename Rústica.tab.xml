@@ -2202,7 +2202,7 @@ zoome
 				<iosvg:transform stroke-width="1.000000" stroke="#1c8a13" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#1c8a13" point-size="1.000000" />
 			</io>
 		</code>
-		<code name="EJES" description="Código desconocido en la tabla EJES" priority="0" tags="" alias="" type="1" helpFile="" table="" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+		<code name="EJES" description="Código desconocido en la tabla EJES" priority="0" tags="" alias="" type="1" helpFile="" table="EJES" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
 			<representation style="CONTINUO" color="40" color-stereo="40" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
 			<io>
 				<iobin:transform code="EJES"/>
