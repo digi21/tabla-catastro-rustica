@@ -1099,7 +1099,7 @@ zoome
 				<ioGeomedia:transform table="ELEMLIN" textHeight="1.000000" />
 				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
 				<ioPostGis:transform table="ELEMLIN" textHeight="1.000000" />
-				<ioshp:transform nameSHP="ELEMLIN" schema="ELEMLIN" typeNewTable="5" />
+				<ioshp:transform nameSHP="ELEMLIN" schema="ELEMLIN" typeNewTable="3" />
 				<iosvg:transform stroke-width="1.000000" stroke="#06d134" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#6d134" point-size="1.000000" />
 			</io>
 		</code>
