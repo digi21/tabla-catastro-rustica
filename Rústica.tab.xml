@@ -823,6 +823,52 @@ zoome
 	<field name="FECHAALTA" title="FECHAALTA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="%DATETIME%" forceDefaultValue="2" visibility="0" />
 	<field name="FECHABAJA" title="FECHABAJA" type="D" length="8" bgColor="#ffffff" allowZeroLength="1" comparable="1" copiable="0" defaultValue="99999999" forceDefaultValue="2" visibility="0" />
 </table>
+<table name="19067_DOMINIO_PUBLICO_PROPUESTA" description="">
+	<field name="ID_DOM_FIN" title="ID_DOM_FIN" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="DENOMINA" title="DENOMINA" type="C" length="71" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="TIPO" title="TIPO" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="SUBTIPO" title="SUBTIPO" type="C" length="19" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="DELEGACIO" title="DELEGACIO" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="MUNICIPIO" title="MUNICIPIO" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="PCAT1" title="PCAT1" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="PCAT2" title="PCAT2" type="C" length="7" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="DESLINDE" title="DESLINDE" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="DNI_TIT" title="DNI_TIT" type="C" length="9" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="NOM_TIT" title="NOM_TIT" type="C" length="46" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="PARAJE" title="PARAJE" type="C" length="3" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="NOM_PAR" title="NOM_PAR" type="C" length="26" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="VIA" title="VIA" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="NOM_VIA" title="NOM_VIA" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="EJERCICIO" title="EJERCICIO" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="NUMERO" title="NUMERO" type="C" length="6" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="CONTROL" title="CONTROL" type="C" length="2" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="MODIFIC" title="MODIFIC" type="C" length="19" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="USUARIO" title="USUARIO" type="C" length="9" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="ID" title="ID" type="C" length="27" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="AREA" title="AREA" type="N" length="10" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="2" visibility="0" />
+	<field name="REFCAT_O" title="REFCAT_O" type="C" length="100" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DENOMINA_P" title="DENOMINA_P" type="C" length="100" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TIPO_P" title="TIPO_P" type="C" length="2" bgColor="#ffffff" valueList="FE|Ferroviario|Ferroviario|FO|Foreatal|Forestal|HI|Hidráuilico|Hidráulico|PE|Pecuario|Pecuario|VI|Viario|Viario|MT|Marítimo-Terrestre|Marítimo-Terrestre|PO|Portuario|Portuario|CO|Comunal|Comunal" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="SUBTIPO_P" title="SUBTIPO_P" type="C" length="50" bgColor="#ffffff" valueList="Camino|Camino|Camino|Cañadas|Cañadas|Cañadas|Cordeles|Cordeles|Cordeles|Veredas|Veredas|Veredas|Autopista libre|Autopista libre|Autopista libre|Autovía|Autovía|Autovía|Carretera multicarril|Carretera multicarril|Carretera multicarril|Carretera convencional|Carretera convencional|Carretera convencional|Monte de utilidad pública|Monte de utilidad pública|Monte de utilidad pública|Comunal|Comunal|Comunal|Otros|Otros|Otros|Hidrografía natual|Hidrografía natural|Hidrografía natural|Hidrografía construida|Hidrografía construida|Hidrografía construida" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="DESLINDE_P" title="DESLINDE_P" type="C" length="1" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="DNI_TIT_P" title="DNI_TIT_P" type="C" length="9" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="NOM_TIT_P" title="NOM_TIT_P" type="C" length="60" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="PARAJE_P" title="PARAJE_P" type="C" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="NOM_PAR_P" title="NOM_PAR_P" type="C" length="30" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="AREA_P" title="AREA_P" type="N" length="9" bgColor="#ffffff" allowZeroLength="1" comparable="1" defaultValue="%ENTITY_AREA%" forceDefaultValue="2" />
+	<field name="REFCAT_P" title="REFCAT_P" type="C" length="14" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="PRODUCTO_P" title="PRODUCTO_P" type="C" length="3" bgColor="#ffffff" valueList="VT:Vía de comunicación pública|Vía de comunicación pública|HG|Hidrografía natural|Hidrografía natural|FF|Vía Ferrea|Vía Ferrea|HC|Hidrografía construida|Hidrografía construida" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CATASTRO_P" title="CATASTRO_P" type="C" length="2" bgColor="#ffffff" valueList="SI|SIExiste en catastro|Existe en catastro|NO|No existe en catastro|No existe en catastro" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="INVENTAR_P" title="INVENTAR_P" type="C" length="2" bgColor="#ffffff" valueList="SI|Sí existe en algún inventario oficial|Sí existe en agún inventario oficial|NO|No existe en algún inventerio oficial|No existe en algún inventario oficial" restrictedToValueList="1" allowZeroLength="1" comparable="1" defaultValue="NO" forceDefaultValue="0" />
+	<field name="ORTOFOTO_P" title="ORTOFOTO_P" type="C" length="2" bgColor="#ffffff" valueList="SI|Sí existe en la ortofoto del PNOA más reciente|Sí existe en la ortofoto del PNOA más reciente|NO|No existe en la ortofoto del PNOA más reciente|No existe en la ortofoto del PNOA más reciente" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="FUEN_DEN_P" title="FUEN_DEN_P" type="C" length="20" bgColor="#ffffff" valueList="INVENTARIO|Inventario|Inventario|MINUTA|Minuta|Minuta|TOPOGRÁFICO PARCELARIO|Topográfico parcelario|Topográfico parcelario|CATASTRO|Catastro|Catastro|CONCENTRACION PARCELARIA|Concentración parcelaria|Concentración parcelaria|CATALOGO|Catálogo|Catálogo" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="CONCENTR_P" title="CONCENTR_P" type="C" length="2" bgColor="#ffffff" valueList="SI|Sí se identifica en los planos de concentración parcelaria|Sí se identifica en los planos de concentración parcelaria|NO|No se identifica en los planos de concentración parcelaria|No se identifica en los planos de concentración parcelaria" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="MINU_IGN_P" title="MINU_IGN_P" type="C" length="2" bgColor="#ffffff" valueList="SI|Sí se identifica en las planimetrías del IGN (sólo para caminos)|Sí se identifica en las planimetrías del IGN (sólo para caminos)|NO|No se identifica en las planimetrías del IGN (sólo para caminos)|No se identifica en las planimetrías del IGN (sólo para caminos)" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="TOPO_PAR_P" title="TOPO_PAR_P" type="C" length="2" bgColor="#ffffff" valueList="SI|Sí se identifica en los planos de catastro topográfico parcelario (sólo para caminos)|Sí se identifica en los planos de catastro topográfico parcelario (sólo para caminos)|NO|No se identifica en los planos de catastro topográfico parcelario (sólo para caminos)|No se identifica en los planos de catastro topográfico parcelario (sólo para caminos)" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="PAR_SERV_P" title="PAR_SERV_P" type="N" length="5" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" visibility="0" />
+	<field name="MODIFICA_P" title="MODIFICA_P" type="C" length="20" bgColor="#ffffff" valueList="GRAFICO|Gráfico|Gráfico|ALFA|Alfanumérico|Alfanumérico|GRAFICO_ALFA|Gráfico y alfanumérico|Gráfico y alfenumérico|NUEVO|Nuevo|Nuevo|NO|No|No" restrictedToValueList="1" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+	<field name="OBSERV_P" title="OBSERV_P" type="C" length="250" bgColor="#ffffff" allowZeroLength="1" comparable="1" forceDefaultValue="0" />
+</table>
 </databaseSchema>
 	<modeloSemantico:semanticModel>
 	</modeloSemantico:semanticModel>
@@ -3516,6 +3562,30 @@ zoome
 				<ioPostGis:transform table="MAPA" textHeight="1.000000" />
 				<ioshp:transform nameSHP="MAPA" schema="MAPA" typeNewTable="5" />
 				<iosvg:transform stroke-width="1.000000" stroke="#c2db18" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#c2db18" point-size="1.000000" />
+			</io>
+		</code>
+		<code name="19067_DOMINIO_PUBLICO_PROPUESTA" description="Código creado automáticamente para el shp: 19067_DOMINIO_PUBLICO_PROPUESTA" priority="0" tags="" alias="" type="1" helpFile="" table="19067_DOMINIO_PUBLICO_PROPUESTA" conditions="" enabled="1" print="1" streamMode="0" applySemanticModel="0" auto="1" sizeInPixel="0">
+			<representation style="CONTINUO" color="1" color-stereo="1" width="1" width-stereo="1" print-color="0" print-width="0.010000" print-height="1" fontTT="Verdana" charSet="0" weightTT="0" italic="0" />
+			<io>
+				<iobin:transform code="19067_DOMINIO_PUBLICO_PROPUESTA"/>
+				<iobind:transform code="19067_DOMINIO_PUBLICO_PROPUESTA"/>
+				<iocsv:transform type="0" />
+				<iodgn:transform level="19067_DOMINIO_PUBLICO_PROPUESTA" colorEntity="-1" styleEntity="Por capa" weightEntity="-1" fillColor="-1"  gg="0" class="0" color="1" style="1" weight="1" viewIndependent="0" notSnappable="0" useThTw="0" th="1.000000" tw="1.000000" >
+					<iodgn:point type="POINT" cell="" sx="1.000000" sy="1.000000" sz="1.000000" />
+					<iodgn:line type="LINESTRING">
+					</iodgn:line>
+					<iodgn:text font="STANDARD" />
+				</iodgn:transform>
+				<iodwg:transform layer="19067_DOMINIO_PUBLICO_PROPUESTA">
+					<iodwg:line type="Polyline3D"/>
+					<iodwg:point type="Point"/>
+					<iodwg:text style="Standard" oblique="0.000000" />
+				</iodwg:transform>
+				<ioGeomedia:transform table="19067_DOMINIO_PUBLICO_PROPUESTA" textHeight="1.000000" />
+				<iokml:transform type="0" elevation="0" extrude="0" opacity="255" />
+				<ioPostGis:transform table="19067_DOMINIO_PUBLICO_PROPUESTA" textHeight="1.000000" />
+				<ioshp:transform nameSHP="19067_DOMINIO_PUBLICO_PROPUESTA" schema="19067_DOMINIO_PUBLICO_PROPUESTA" typeNewTable="3" />
+				<iosvg:transform stroke-width="1.000000" stroke="#74231f" stroke-linejoin="miter" stroke-linecap="butt" fill="0" fill-color="#74231f" point-size="1.000000" />
 			</io>
 		</code>
 	</codes>
